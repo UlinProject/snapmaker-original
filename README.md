@@ -1,6 +1,6 @@
 <div id="header" align="center">
 
-<p align="center"><img src="./img/preview.jpg" width="40%"></img></p>
+<p align="center"><img src="./img/main.jpg" width="40%"></img></p>
 
   <b>[snapmaker-original]</b>
   
@@ -60,6 +60,9 @@ The processor's performance fully covers the printer's capabilities, but the fee
 | maximum XY jerk (mm/s) | X20.00 |
 | maximum Z jerk (mm/s) | Z0.40 |
 | maximum E jerk (mm/s) | E5.00 |
+| 3d work area | 125x125x125 mm |
+| laser work area | 125x125 mm |
+| cnc work area | 90x90x50 mm |
 
 The printer manufacturer recommends a default head movement speed of 100 mm/s during printing, and a print speed of 40/50/60 mm/s and a retraction speed of 60 mm/s (at a distance of 5 mm).
 
