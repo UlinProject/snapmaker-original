@@ -123,3 +123,7 @@ This is a more or less simple way to replace one of the fans, namely the fan in 
 #### Octoprint
 I have long been accustomed to the "clipper" and at the moment I wanted to keep the original brains, but at the same time have the ability to print and control the printer over the network, the simplest solution was to install octoprint.
 
+#### UART
+Very weak (115200boud) feedback and high latency do not produce good prints. Eliminating the latency that occurs on USB allows the octoprint to work better and print better, but the 115200 is not defeated yet.
+
+The photo shows the contacts that need to be soldered to use the UART of the single board computer and the microcontroller directly without converting to USB and back.
