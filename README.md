@@ -102,11 +102,15 @@ I have hardly used it and have not tested it. There is a dc/dc converter board i
 
 ### Mods
 
-#### Cooling (3D)
+#### Cooling of the thread (3D)
 Cooling of the filament during printing is arranged in the strangest way, in general it is enough for someone, but for beginners I recommend printing and using https://www.thingiverse.com/thing:3403426 (I am not the author of this model, it is simply in the public domain)
 
 #### Strange Y-axis settings
 Initially, one oddity was noticed in the printer: if the X and Z axes were correctly limited by software and did not reach the limit, then the Y axis at the possible maximum slightly crashed into an obstacle. In general, this is not critical, since it crashed only one step and there is such a possibility that this is only me, but here is the fix:
+
+#### Brain cooling
+This is a more or less simple way to replace one of the fans, namely the fan in the brains with a 40mm fan (as far as I remember), in addition to the model itself, you will probably need a 12V converter (if you use a 12V fan) and a dremel to cut out the original plastic from the brains. Here is a printable model https://www.thingiverse.com/thing:6123116 (I am not the author of this model, it is simply in the public domain)
+
 
 ```gcode
 M1025 X131.00 Y128.00 Z128.00
