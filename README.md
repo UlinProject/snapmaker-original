@@ -47,7 +47,7 @@ The processor's performance fully covers the printer's capabilities, but the fee
 | ---- | ----- |
 | steps per unit | X 400.00, Y 400.00, Z400.00, E92.60 |
 | microsteps | 16 |
-| maximum feedrates (mm/s) | X 300.00, Y300.00, Z5.00, E25.00 |
+| maximum feedrates (mm/s) | X 300.00, Y 300.00, Z 5.00, E 25.00 |
 | 3d maximum acceleration (mm/s2) | X 1000, Y 1000, Z 100, E 10000 |
 | cnc maximum acceleration (mm/s2) | X 100, Y 100, Z 100, E 100 |
 | laser maximum acceleration (mm/s2) | X 3600, Y 3600, Z 3600 |
