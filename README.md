@@ -55,3 +55,7 @@ I had an old Mean Well S-150-24 power supply (24V ~6.5A, ~150W) lying around in 
 
 #### Cooling
 Almost everywhere 24V fans are used, connected directly to 24V. All fans are absolutely tiny and create a lot of noise, the saddest thing is that they are not very productive and I once managed to catch a traffic jam in the extruder due to not very good weather conditions.
+
+#### Bed
+The textolite is small in size (128x128 mm), heating is exclusively resistive (24V, did not determine the power), heating up to 60 degrees is preferable. The main disadvantage of this table is the lack of insulation and all the heat is directed both to the platform itself and to heating its base (guide). Also, the bolts for fastening the platform to the guide are slightly larger than required, because of this, the screws themselves cut into the sticker glued to the platform a little. Another plus is that this sticker does not require any glue at all when printing PLA / PETG.
+
