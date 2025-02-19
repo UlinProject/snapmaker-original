@@ -66,6 +66,8 @@ The processor's performance fully covers the printer's capabilities, but the fee
 
 The printer manufacturer recommends a default head movement speed of 100 mm/s during printing, and a print speed of 40/50/60 mm/s and a retraction speed of 60 mm/s (at a distance of 5 mm).
 
+The printer has one bad feature in the firmware, namely if you forgot to move the carriage home after printing, and it is in the maximum position (and after printing it is always in the maximum position), then after turning the printer off and on and pressing the home button, you will get a short-term impact of the head on the Z-axis limiter. The impact itself on the Z-axis limiter is not very critical, but very unpleasant and can lead to self-unscrewing.
+
 ### Physical
 
 A thick aluminum plate on which the modular guides are located. The modular guides are based on a stepper motor + rigid coupling + four-way trapezoidal shaft, on top of the guide there is a thin aluminum plate with a conventional limit switch. The guides used are absolutely identical to the guides along the X, Y, Z axes, the order of connection to the motherboard determines the belonging of the guide to the desired axis. The moving carriage is held by openbuilds rollers.
@@ -108,7 +110,9 @@ The first layer is calibrated in the printer very poorly, the calibration of the
 <img src="./img/cnc.JPG" width="11%"></img>
 <img src="./img/cnc2.JPG" width="11%"></img>
 
-Uses a weak spindle 30W RBI-365024 24V, the main software assumes the use and configuration of specific cutters, the ability to perform drilling was not found. There are many shortcomings, no automatic centering, no speed control, a lot of noise during operation. The spindle control board is supposedly designed for control, but in the copy that I had, the board actually consisted of two resistors, the on/off control is carried out by the main brain board.
+Uses a weak spindle 30W RBI-365024 24V, the main software assumes the use and configuration of specific cutters, the ability to perform drilling was not found. There are many shortcomings, no automatic centering, no speed control, a lot of noise during operation. The spindle control board is supposedly designed for control, but in the copy that I had, the board actually consisted of two resistors that do not assume speed control, there is only on / off control, carried out by the main brain board.
+
+Also one of the minuses - the fastening of cutters / drills is not very good.
 
 #### Laser
 <img src="./img/laser.JPG" width="11%"></img>
@@ -198,3 +202,8 @@ In general, it would be possible to simply desolder the a4988 with a hair dryer 
 
 #### Klipper?
 Yes, this printer and this motherboard can be upgraded with Klipper, and I have most of the equipment to do it now, but I'm not doing it yet because I want to try a more original CNC and laser.
+
+## General impressions
+I liked the printer first of all for its assembly, it is completely aluminum, there are very few plastic parts, the printer creators even used thread locks and the idea of ​​3 in one is very catchy, but it has a very strong drawback, namely NOISE, which can be reduced by modifying the fans and ultimately the drivers, spindle...
+
+As for the price, it turned out that this printer did not cost me that much, since the authors cut it out of their line, but at the same time, if I needed 3D printing, I could have initially bought something similar fast on "klipper".
