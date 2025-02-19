@@ -78,7 +78,6 @@ The design features of the printer and the trapezoid shaft in the guides in comb
 #### Power unit
 <img src="./img/power.JPG" width="11%"></img>
 
-
 A 24V 5A (120W) power supply is used, the reason is unknown, but from the factory this power supply showed 25.2V, in general, an excess of 0.2V is justified, since it allows you to compensate for losses on the wires, but here the excess is as much as 1.2V, which is very bad for the printer's electronics, since all its components (even just fans, heaters) are designed exclusively for 24V. My possible theory is that this excess is most likely done intentionally, since the printer experiences sagging when the heater and table are simultaneously heated by 1.2V.
 You can determine the voltage drop simply by the sound of the fans, which are connected directly to 24 V here.
 
@@ -204,6 +203,9 @@ In general, it would be possible to simply desolder the a4988 with a hair dryer 
 Yes, this printer and this motherboard can be upgraded with Klipper, and I have most of the equipment to do it now, but I'm not doing it yet because I want to try a more original CNC and laser.
 
 ## General impressions
+<img src="./img/imprint2.JPG" width="11%"></img>
+<img src="./img/imprint3.JPG" width="11%"></img>
+
 I liked the printer first of all for its assembly, it is completely aluminum, there are very few plastic parts, the printer creators even used thread locks and the idea of ​​3 in one is very catchy, but it has a very strong drawback, namely NOISE, which can be reduced by modifying the fans and ultimately the drivers, spindle...
 
 As for the price, it turned out that this printer did not cost me that much, since the authors cut it out of their line, but at the same time, if I needed 3D printing, I could have initially bought something similar fast on "klipper".
