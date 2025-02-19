@@ -43,8 +43,8 @@ The processor's performance fully covers the printer's capabilities, but the fee
 
 | name | value |
 | ---- | ----- |
-| microsteps | 16 |
 | steps per unit | X 400.00, Y 400.00, Z400.00, E92.60 |
+| microsteps | 16 |
 | maximum feedrates (mm/s) | X 300.00, Y300.00, Z5.00, E25.00 |
 | 3d maximum acceleration (mm/s2) | X 1000, Y 1000, Z 100, E 10000 |
 | cnc maximum acceleration (mm/s2) | X 100, Y 100, Z 100, E 100 |
@@ -77,7 +77,12 @@ Also, this power supply does not have any cooling capabilities and heats up with
 I had an old Mean Well S-150-24 power supply (24V ~6.5A, ~150W) lying around in the bins, not the best choice, but reliable. I set it to 24.2 V and made a double wire to power the printer. As a result, the drop was 0.2 V at the moment of simultaneous heating of the extruder and the table, which suited me quite well.
 
 #### Cooling
-Almost everywhere 24V fans are used, connected directly to 24V. All fans are absolutely tiny and create a lot of noise, the saddest thing is that they are not very productive and I once managed to catch a traffic jam in the extruder due to not very good weather conditions.
+Almost all of them use 24V fans, connected directly to 24V, i.e. they are uncontrollable. All fans are absolutely tiny and create a lot of noise, the saddest thing is that they are not very productive and I once managed to catch a traffic jam in the extruder due to not very good weather conditions.
+
+It is recommended to replace almost all fans with larger ones.
+
+#### Display
+A very good solution, you can just take it as a phone and control the printer, a display with good resolution and more or less high-quality color gamut, not requiring a stylus. The solution is a ready-made purchased uart solution with its own microcontroller and program. The display is poorly compatible with the standard gcode for text displays and, for example, does not allow much under octoprint. I repeat that this display does not receive an image from the main microcontroller, but is independent.
 
 ### 3 In one
 
@@ -94,3 +99,14 @@ Uses a weak spindle 30W RBI-365024 24V, the main software assumes the use and co
 
 #### Laser
 I have hardly used it and have not tested it. There is a dc/dc converter board inside and presumably the feedback and dc/dc regulation works. (will be added).
+
+### Mods
+
+#### Strange Y-axis settings
+Initially, one oddity was noticed in the printer: if the X and Z axes were correctly limited by software and did not reach the limit, then the Y axis at the possible maximum slightly crashed into an obstacle. In general, this is not critical, since it crashed only one step and there is such a possibility that this is only me, but here is the fix:
+
+```gcode
+M1025 X131.00 Y128.00 Z128.00
+M500
+```
+This g-code will determine the maximums for the axes and save the changes.
