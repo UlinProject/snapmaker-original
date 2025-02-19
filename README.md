@@ -16,6 +16,8 @@
 ## Description
 I have been developing devices similar to 3D printers for a long time, I even created one self-assembling Cartesian printer based on a clipper (stm32f407, rails, belts) practically from scratch and one fine day, while studying a local trading platform, I came across this small and interesting printer. Initially, I was not interested in the quality of its 3D printing (I thought that if it prints, then it is already good), and I was only interested in its CNC capabilities and 3 in 1 technologies (3D, CNC, LASER).
 
+My specific printer was manufactured in 2020-2021, and the printer model itself was first manufactured even earlier, around 2017-2018.
+
 ## Disclaimer
 The information presented here is solely my opinion and may be both useful and harmful to the end user. All actions described are solely my experience, the end user can repeat my actions only at their own risk. Damage to your device can occur at any stage of the end user's actions.
 
@@ -106,7 +108,13 @@ I have hardly used it and have not tested it. There is a dc/dc converter board i
 Cooling of the filament during printing is arranged in the strangest way, in general it is enough for someone, but for beginners I recommend printing and using https://www.thingiverse.com/thing:3403426 (I am not the author of this model, it is simply in the public domain)
 
 #### Spool holder (3D)
-The original very small spool could be used further in this printer, but I mostly use full-size plastic spools weighing 1 kg and often encounter feed instability during printing due to uneven movement of the spool along the axis, there are also situations when it is necessary to move the printer from place to place and here situations of falling of the plastic spool are not uncommon. I settled on an open solution https://www.thingiverse.com/thing:3413947 (I am not the author of this model, it is simply in the public domain) it prints perfectly on this printer, holds the spool firmly, rotates easily and adjusts to any spool size.
+The original very small spool could be used further in this printer, but I mainly use full-size plastic spools weighing 1 kg and often encounter feed instability during printing due to uneven movement of the spool along the axis, there are also situations when it is necessary to move the printer from place to place and here situations of falling of the plastic spool are not uncommon. I settled on an open solution https://www.thingiverse.com/thing:3413947 (I am not the author of this model, it is just in the public domain) it prints perfectly on this printer, holds the spool firmly, rotates easily and adjusts to any spool size, the author provided a full original threaded fixation!
+
+Please note that the use of any Teflon guide tubes in the filament flow negatively affects the final prints, in this printer, due to the incorrect angle of the spool, these flow changes are especially noticeable!
+It was also recommended that if you do not use this modification, it is better to position the coil counterclockwise, and if with this modification, then clockwise!
+
+#### Thread Spool Holder (3D)
+The thread holder allows you to correctly position the thread flow at a certain height, together with the modification of the holder, this is a comprehensive solution. Also, one of the advantages of this holder is that it allows you to easily move the engine control screen to the very top. https://www.thingiverse.com/thing:2757715 (I am not the author of this model, it is simply in the public domain)
 
 #### Strange Y-axis settings
 Initially, one oddity was noticed in the printer: if the X and Z axes were correctly limited by software and did not reach the limit, then the Y axis at the possible maximum slightly crashed into an obstacle. In general, this is not critical, since it crashed only one step and there is such a possibility that this is only me, but here is the fix:
@@ -142,3 +150,9 @@ And so, having assembled this strange creation, I started installing and testing
 And then I had to set it up for a long time, the extruder became many times longer, I had to make sure that the steps and flow rate settings were correct, I also had to make sure that the temperature sensor readings were correct, since it was not the original one, the firmware supports PID autocalibration, but I was unable to achieve constant readings, and the original PID generally suited me.
 
 According to the tests, the extruder began to heat up many times longer, and the correctness of the readings was also unclear. Having printed the first test calibration models, I was convinced of the strangeness of the extrusion, if earlier it was necessary to reduce the feed to 98% (with the standard 100%), now according to the tests the feed had to be increased to 101%, which is strange, and the models became worse, and some even better, and the quality of the output plastic filament became many times better. I also had to recalibrate the surface, since the extruder itself is on a screw connection (inaccuracies in parallelism relative to the "bed") and the Y axis was previously increased. After recalibrating the "bed" I managed to lower the fan lower and faced the fact that printing always ended with complete detachment of the model, after a long recalibration of the model it turned out that the standard 205/200 (first layer and final layer) degrees are not enough for printing PLA, I had to increase the temperature to 220 and 217 (at 215 the extruder has a hard time), which gave generally good prints.
+
+#### TMC2209?
+In general, it would be possible to simply desolder the a4988 with a hair dryer and replace them with tmc2209, since they have similar pinout, and also change the harness a little and maybe even run the setup via uart and sensorless pointing, but at the moment I decided not to do this. The reason for using tmc2209 is simple, it is the ability to greatly reduce the noise of the stepper motors, but the StealthChop algorithm can also cause problems with circular geometry, and because of the a4988, the stepper motors are very noisy even in standby mode.
+
+#### Klipper?
+Yes, this printer and this motherboard can be upgraded with Klipper, and I have most of the equipment to do it now, but I'm not doing it yet because I want to try a more original CNC and laser.
