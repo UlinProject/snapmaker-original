@@ -33,7 +33,7 @@ All rights reserved.
 | cpu | stm32f105 (ARM; Flash: 128kB; 72MHz; SRAM: 64kB) |
 | feedback | usb: ch340g (only 115200 boud) |
 | power unit | 24V 5A (120w) |
-| firmware | own firmware based on marlin 1.1.0-RC6 (2016-04-24 12:00) |
+| firmware | own firmware 2.11 based on marlin 1.1.0-RC6 (2016-04-24 12:00) |
 | gcode | marlin 1.1.0 + own set of instructions |
 | drivers | a4988 |
 
