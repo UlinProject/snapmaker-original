@@ -55,6 +55,8 @@ I had an old Mean Well S-150-24 power supply (24V ~6.5A, ~150W) lying around in 
 #### Cooling
 Almost everywhere 24V fans are used, connected directly to 24V. All fans are absolutely tiny and create a lot of noise, the saddest thing is that they are not very productive and I once managed to catch a traffic jam in the extruder due to not very good weather conditions.
 
+### 3 In one
+
 #### Extruder (3D)
 A classic extruder built on the basis of an unknown to me full-size nemo 17 (42HD4414-07 2020/08/19) from mocotech and gears (factory e-steps 92.60), a radiator noticeably larger than its classic versions, a convenient unknown to me thermal barrier, which involves fastening by screwing in one countersunk screw. By selection, it was established that the heating block itself is E3D V5, but with an unknown to me thermal barrier, which does not imply unscrewing from the block.
 
