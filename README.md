@@ -1,6 +1,6 @@
 <div id="header" align="center">
 
-<p align="center"><img src="./img/main.jpg" width="40%"></img></p>
+<p align="center"><img src="./img/main.jpg" width="40%"></img> <img src="./img/main2.jpg" width="21%"></img></p>
 
   <b>[snapmaker-original]</b>
   
@@ -74,6 +74,9 @@ A thick aluminum plate on which the modular guides are located. The modular guid
 The design features of the printer and the trapezoid shaft in the guides in combination with the "oak" a4988 should have shown good results, the manufacturer himself assures the accuracy of 50-300 microns. When 3D printing with non-factory plastic, measuring with a not very precise tool, I got a deviation of ~ 0.2 mm along the Y axis from the original dimensions of the model, which was generally successfully corrected by software.
 
 #### Power unit
+<img src="./img/power.JPG" width="11%"></img>
+
+
 A 24V 5A (120W) power supply is used, the reason is unknown, but from the factory this power supply showed 25.2V, in general, an excess of 0.2V is justified, since it allows you to compensate for losses on the wires, but here the excess is as much as 1.2V, which is very bad for the printer's electronics, since all its components (even just fans, heaters) are designed exclusively for 24V. My possible theory is that this excess is most likely done intentionally, since the printer experiences sagging when the heater and table are simultaneously heated by 1.2V.
 You can determine the voltage drop simply by the sound of the fans, which are connected directly to 24 V here.
 
@@ -102,9 +105,14 @@ The textolite is small in size (128x128 mm), heating is exclusively resistive (2
 The first layer is calibrated in the printer very poorly, the calibration of the first layer is more truthful only at the moments of full heating of the platform, which the manufacturer did not provide for in the firmware. After calibrating the surface, you can more clearly evaluate the first layer on the model https://www.thingiverse.com/thing:3797458, and then perform the final calibration based on the model.
 
 #### Spindle (CNC)
+<img src="./img/cnc.JPG" width="11%"></img>
+<img src="./img/cnc2.JPG" width="11%"></img>
+
 Uses a weak spindle 30W RBI-365024 24V, the main software assumes the use and configuration of specific cutters, the ability to perform drilling was not found. There are many shortcomings, no automatic centering, no speed control, a lot of noise during operation. The spindle control board is supposedly designed for control, but in the copy that I had, the board actually consisted of two resistors, the on/off control is carried out by the main brain board.
 
 #### Laser
+<img src="./img/laser.JPG" width="11%"></img>
+
 I have hardly used it and have not tested it. There is a dc/dc converter board inside and presumably the feedback and dc/dc regulation works. (will be added).
 
 ### Mods
@@ -113,6 +121,8 @@ I have hardly used it and have not tested it. There is a dc/dc converter board i
 Cooling of the filament during printing is arranged in the strangest way, in general it is enough for someone, but for beginners I recommend printing and using https://www.thingiverse.com/thing:3403426 (I am not the author of this model, it is simply in the public domain)
 
 #### Spool holder (3D)
+<img src="./img/orig_spool_holder.JPG" width="11%"></img>
+
 The original very small spool could be used further in this printer, but I mainly use full-size plastic spools weighing 1 kg and often encounter feed instability during printing due to uneven movement of the spool along the axis, there are also situations when it is necessary to move the printer from place to place and here situations of falling of the plastic spool are not uncommon. I settled on an open solution https://www.thingiverse.com/thing:3413947 (I am not the author of this model, it is just in the public domain) it prints perfectly on this printer, holds the spool firmly, rotates easily and adjusts to any spool size, the author provided a full original threaded fixation!
 
 Please note that the use of any Teflon guide tubes in the filament flow negatively affects the final prints, in this printer, due to the incorrect angle of the spool, these flow changes are especially noticeable!
@@ -134,9 +144,15 @@ This g-code will determine the maximums for the axes and save the changes.
 This is a more or less simple way to replace one of the fans, namely the fan in the brains with a 40mm fan (as far as I remember), in addition to the model itself, you will probably need a 12V converter (if you use a 12V fan) and a dremel to cut out the original plastic from the brains. Here is a printable model https://www.thingiverse.com/thing:6123116 (I am not the author of this model, it is simply in the public domain)
 
 #### Octoprint
+<img src="./img/octoprint-usb.JPG" width="11%"></img>
+
 I have long been accustomed to the "clipper" and at the moment I wanted to keep the original brains, but at the same time have the ability to print and control the printer over the network, the simplest solution was to install octoprint.
 
+<b>... Will be supplemented</b>
+
 #### UART
+<img src="./img/uart.JPG" width="21%"></img>
+
 Very weak (115200boud) feedback and high latency do not produce good prints. Eliminating the latency that occurs on USB allows the octoprint to work better and print better, but the 115200 is not defeated yet.
 
 The photo shows the contacts that need to be soldered to use the UART of the single board computer and the microcontroller directly without converting to USB and back.
@@ -144,17 +160,28 @@ The photo shows the contacts that need to be soldered to use the UART of the sin
 #### Volcano (3D)
 At first I wasn't too keen on using the stock hotend but surprisingly it printed very well, an extra hotend was included in the spares and after catching the plastic plug again (but this time due to an Octoprint software bug the filament just popped out) and using the extra hotend I didn't want to go out and buy the original hotend or try to burn and oxidize it, I wanted something new.
 
+<img src="./img/volcano/demo0.JPG" width="11%"></img>
+
 After digging through my spares and finding two Volcano aluminum hotends with a silicone sock, a temperature sensor (already in the sleeve) and a heater from Triangle Lab I started thinking about adapting the stock extruder to the Volcano!
 
+<img src="./img/volcano/demo1.JPG" width="11%"></img>
 The first thing I ran into was the inability to use the standard bimetal thermal break, thermal breaks are essentially a transition from a large thread diameter to a small one and this hotend was designed with one diameter and no threads along the entire length. And even after cutting the threads in the radiator (while maintaining the ability to use the original thermal blocks), I was able to screw only a bimetallic thermal barrier into the original radiator, and that from the other side. After digging around, I found a thermal barrier with a thread that has the same diameter along its entire length, but is still a thermal barrier. In the future, I will need to order a thermal barrier with half a thread and half without a thread. In general, the diameter could be increased in the original radiator, but I decided to leave the option of using the original block.
 
+<img src="./img/volcano/demo2.JPG" width="11%"></img>
 Having measured the distance, I installed the thermal barrier and began to assemble the hotend using fum tape and thread lock. The main difficulty in installing the hotend was the complexity of placement, oddly enough, there was a partition in the extruder head that interfered with the installation of the radiator, and the extruder became several times longer, but the solution was the simplest - slightly grind down the edge of the radiator or install the radiator, but using the space from the other edge of the head.
 
+<img src="./img/volcano/demo3.JPG" width="11%"></img>
+<img src="./img/volcano/demo4.JPG" width="11%"></img>
 And so, having assembled this strange creation, I started installing and testing it, and my terrible expectations were justified... the extruder simply crashed into the platform, I had to raise the Y-axis to maintain the original length, temporarily putting washers under it and adjusting the height, I determined a convenient size for myself (in the future I will need something made of metal with the right dimensions) for testing.
 
+<img src="./img/volcano/demo5.JPG" width="11%"></img>
+<img src="./img/volcano/demo6.JPG" width="11%"></img>
 And then I had to set it up for a long time, the extruder became many times longer, I had to make sure that the steps and flow rate settings were correct, I also had to make sure that the temperature sensor readings were correct, since it was not the original one, the firmware supports PID autocalibration, but I was unable to achieve constant readings, and the original PID generally suited me.
 
+<img src="./img/volcano/demo7.JPG" width="11%"></img>
 According to the tests, the extruder began to heat up many times longer, and the correctness of the readings was also unclear. Having printed the first test calibration models, I was convinced of the strangeness of the extrusion, if earlier it was necessary to reduce the feed to 98% (with the standard 100%), now according to the tests the feed had to be increased to 101%, which is strange, and the models became worse, and some even better, and the quality of the output plastic filament became many times better. I also had to recalibrate the surface, since the extruder itself is on a screw connection (inaccuracies in parallelism relative to the "bed") and the Y axis was previously increased. After recalibrating the "bed" I managed to lower the fan lower and faced the fact that printing always ended with complete detachment of the model, after a long recalibration of the model it turned out that the standard 205/200 (first layer and final layer) degrees are not enough for printing PLA, I had to increase the temperature to 220 and 217 (at 215 the extruder has a hard time), which gave generally good prints.
+
+<img src="./img/volcano/demo8_manualtemperature_selection.JPG" width="11%"></img>
 
 #### Gaps in the guides
 The Y-guide design is not very good and involves large gaps through which debris can get in and affect the trapezoid screws; from time to time, various debris can get in there, including bolts or nuts (which, by the way, once happened to me), and especially considering that the manufacturer also assumes milling on this printer, the issue of debris is very acute.
