@@ -68,7 +68,6 @@ The printer manufacturer recommends a default head movement speed of 100 mm/s du
 The printer has one bad feature in the firmware, namely if you forgot to move the carriage home after printing, and it is in the maximum position (and after printing it is always in the maximum position), then after turning the printer off and on and pressing the home button, you will get a short-term impact of the head on the Z-axis limiter. The impact itself on the Z-axis limiter is not very critical, but very unpleasant and can lead to self-unscrewing.
 
 ### Physical
-
 A thick aluminum plate on which the modular guides are located. The modular guides are based on a stepper motor + rigid coupling + four-way trapezoidal shaft, on top of the guide there is a thin aluminum plate with a conventional limit switch. The guides used are absolutely identical to the guides along the X, Y, Z axes, the order of connection to the motherboard determines the belonging of the guide to the desired axis. The moving carriage is held by openbuilds rollers.
 
 #### Accuracy
@@ -148,9 +147,27 @@ This is a more or less simple way to replace one of the fans, namely the fan in 
 #### Octoprint
 <img src="./img/octoprint-usb.JPG" width="11%"></img>
 
-I have long been accustomed to the "clipper" and at the moment I wanted to keep the original brains, but at the same time have the ability to print and control the printer over the network, the simplest solution was to install octoprint.
+I have long been accustomed to the "clipper" and at the moment I wanted to keep the original brains, but at the same time have the ability to print and control the printer over the network, the simplest solution was to install an octoprint.
 
-<b>... Will be supplemented</b>
+There are no special recommendations here, and some parameters may not suit you. (there may also be errors here)
+
+| name | value |
+| ---- | ----- |
+| name | Snapmaker Original |
+| model | Snapmaker Original |
+| form factor | Rectangler |
+| origin | Lower left |
+| heated bed | + |
+| width (X) | 125 |
+| depth (Y) | 125 |
+| height (Z) | 125 |
+| axes X | 10000 |
+| axes Y | 10000 |
+| axes Z | 220 |
+| axes E | 1000 |
+| nozzle diameter | 0.4 |
+| number of extruders | 1 |
+| default extrusion length | 5 |
 
 #### UART
 <img src="./img/uart.JPG" width="21%"></img>
@@ -158,6 +175,7 @@ I have long been accustomed to the "clipper" and at the moment I wanted to keep 
 Very weak (115200boud) feedback and high latency do not produce good prints. Eliminating the latency that occurs on USB allows the octoprint to work better and print better, but the 115200 is not defeated yet.
 
 The photo shows the contacts that need to be soldered to use the UART of the single board computer and the microcontroller directly without converting to USB and back.
+After soldering the contacts I recommend removing the ch340g chip, but I want to note that you will lose USB support.
 
 #### Volcano (3D)
 At first I wasn't too keen on using the stock hotend but surprisingly it printed very well, an extra hotend was included in the spares and after catching the plastic plug again (but this time due to an Octoprint software bug the filament just popped out) and using the extra hotend I didn't want to go out and buy the original hotend or try to burn and oxidize it, I wanted something new.
@@ -200,6 +218,15 @@ In general, it would be possible to simply desolder the a4988 with a hair dryer 
 
 #### Klipper?
 Yes, this printer and this motherboard can be upgraded with Klipper, and I have most of the equipment to do it now, but I'm not doing it yet because I want to try a more original CNC and laser.
+
+#### My configuration for 2025
+
+| name | value |
+| ---- | ----- |
+| heat block | Volcano Plated Copper with insulator (TriangleLab) |
+| heater | 24V 40W (TriangleLab) |
+| sensor | 104NT-4 R025H42G in the sleeve (TriangleLab) |
+| thermal barrier | unknown |
 
 ## General impressions
 <img src="./img/imprint2.JPG" width="11%"></img>
