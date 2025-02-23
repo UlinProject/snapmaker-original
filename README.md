@@ -101,7 +101,7 @@ A significant drawback of the extruder is the use of a "drop" thermistor instead
 #### Bed (3D)
 The textolite is small in size (128x128 mm), heating is exclusively resistive (24V, did not determine the power), heating up to 60 degrees is preferable. The main disadvantage of this table is the lack of insulation and all the heat is directed both to the platform itself and to heating its base (guide). Also, the bolts for fastening the platform to the guide are slightly larger than required, because of this, the screws themselves cut into the sticker glued to the platform a little. Another plus is that this sticker does not require any glue at all when printing PLA / PETG.
 
-The first layer is calibrated in the printer very poorly, the calibration of the first layer is more truthful only at the moments of full heating of the platform, which the manufacturer did not provide for in the firmware. After calibrating the surface, you can more clearly evaluate the first layer on the model https://www.thingiverse.com/thing:3797458, and then perform the final calibration based on the model.
+The first layer is calibrated in the printer very poorly, the calibration of the first layer is more truthful only at the moments of full heating of the platform, which the manufacturer did not provide for in the firmware. After calibrating the surface, you can more clearly evaluate the first layer on the model https://www.thingiverse.com/thing:3797458 (I am not the author of this model, it is simply in the public domain), and then perform the final calibration based on the model.
 
 #### Spindle (CNC)
 <img src="./img/cnc.JPG" width="11%"></img>
