@@ -32,7 +32,7 @@ Snapmaker is a registered trademark, to which I have no relation, you can always
 | name | value |
 | ---- | ----- |
 | cpu | stm32f105 (ARM; Flash: 128kB; 72MHz; SRAM: 64kB) |
-| feedback | usb: ch340g (only 115200 boud) |
+| feedback | usb: ch340g (only 115200 boud, or 250000_boud/500000_boud in custom firmware) |
 | power unit | 24V 5A (120w) |
 | firmware | own firmware 2.11 based on marlin 1.1.0-RC6 (2016-04-24 12:00) |
 | gcode | marlin 1.1.0 + own set of instructions |
@@ -71,7 +71,17 @@ The printer has one bad feature in the firmware, namely if you forgot to move th
 A thick aluminum plate on which the modular guides are located. The modular guides are based on a stepper motor + rigid coupling + four-way trapezoidal shaft, on top of the guide there is a thin aluminum plate with a conventional limit switch. The guides used are absolutely identical to the guides along the X, Y, Z axes, the order of connection to the motherboard determines the belonging of the guide to the desired axis. The moving carriage is held by openbuilds rollers.
 
 #### Accuracy
-The design features of the printer and the trapezoid shaft in the guides in combination with the "oak" a4988 should have shown good results, the manufacturer himself assures the accuracy of 50-300 microns. When 3D printing with non-factory plastic, measuring with a not very precise tool, I got a deviation of ~ 0.2 mm along the Y axis from the original dimensions of the model, which was generally successfully corrected by software.
+The design features of the printer and the trapezoid shaft in the guides in combination with the "oak" a4988 should have shown good results, the manufacturer himself assures the accuracy of 50-300 microns. I calibrate each thread for accuracy and enter the data into the slicer, measuring with a caliper with a resolution of 0.01 mm and an error of 0.02 mm. In general, I get:
+
+| NAME | ~PETG | ~PLA |
+| ---- | ---- | ----- |
+| min absolute deviation (X and Y axes) | 0.02mm | 0.02mm |
+| average absolute deviation (X and Y axes) | 0.08mm | 0.12mm |
+| max absolute deviation (X and Y axes) | 0.17mm | 0.20mm |
+
+In general, I have summarized many results of different filaments under the general one and described the general deviation of the two axes. I would also like to note that this printer gives more accurate results on the X-axis than on the Y-axis.
+
+<b>The section is not finished yet.</b>
 
 #### Power unit
 <img src="./img/power.JPG" width="11%"></img>
@@ -147,7 +157,7 @@ This is a more or less simple way to replace one of the fans, namely the fan in 
 #### Octoprint
 <img src="./img/octoprint-usb.JPG" width="11%"></img>
 
-I have long been accustomed to the "clipper" and at the moment I wanted to keep the original brains, but at the same time have the ability to print and control the printer over the network, the simplest solution was to install an octoprint.
+I have long been accustomed to the "klipper" and at the moment I wanted to keep the original brains, but at the same time have the ability to print and control the printer over the network, the simplest solution was to install an octoprint.
 
 There are no special recommendations here, and some parameters may not suit you. (there may also be errors here)
 
@@ -176,6 +186,8 @@ Very weak (115200boud) feedback and high latency do not produce good prints. Eli
 
 The photo shows the contacts that need to be soldered to use the UART of the single board computer and the microcontroller directly without converting to USB and back.
 After soldering the contacts I recommend removing the ch340g chip, but I want to note that you will lose USB support.
+
+<b>These actions are relevant only for the factory firmware</b>, when using firmware at a higher speed (different from 115200) this problem is more or less eliminated by the firmware "32Base_2_11_01Demo250000BOUD.Bin". The problem is completely eliminated on the firmware "32Base_2_11_04Demo500000BOUDAndMoreSerialMods.bin" with an active "buffer buddy" (plugin on octoprint) and can be used with a usb dongle, but 500000 baud may not suit everyone and you can use a simpler one without special corrections "32Base_2_11_01Demo250000BOUD.Bin" at 250000 baud.
 
 #### Volcano (3D)
 At first I wasn't too keen on using the stock hotend but surprisingly it printed very well, an extra hotend was included in the spares and after catching the plastic plug again (but this time due to an Octoprint software bug the filament just popped out) and using the extra hotend I didn't want to go out and buy the original hotend or try to burn and oxidize it, I wanted something new.
@@ -242,22 +254,27 @@ In general, you can use Luban, it has good settings for this printer on the old 
 
 Start G-code
 ```gcode
+M1005
+
 T0
 M82 ;absolute extrusion mode
 ;Start GCode begin
 M104 S{material_print_temperature_layer_0} ;Set Hotend Temperature
 M140 S{material_bed_temperature_layer_0} ;Set Bed Temperature
 G28 ;home
+M400 ; WAIT END G0/G1
 M109 S{material_print_temperature_layer_0} ;Wait for Hotend Temperature
 M190 S{material_bed_temperature_layer_0} ;Wait for Bed Temperature
 G90 ;absolute positioning
 G0 X-10 Y-10 F3000
 G0 Z0 F1800
 G92 E0
-G1 E20 F200
+G1 E25 F190 ; Extrusion
+G92 E0
+
 G0 X0 Y0 F3000 ;Move to origin
 G0 Z1 F1800 ;Move up to avoid scraping against heated bed
-G92 E0
+
 ;Start GCode end
 ```
 
@@ -266,6 +283,7 @@ End G-code
 M140 S0
 M107
 ;End GCode begin
+M400 ; WAIT END G0/G1
 M104 S0 ;extruder heater off
 M140 S0 ;heated bed heater off (if you have it)
 G90 ;absolute positioning
@@ -276,6 +294,7 @@ G1 X0 F3000 ;move X to min endstops, so the head is out of the way
 G1 Y125 F3000 ;so the head is out of the way and Plate is moved forward
 ;End GCode end
 M82 ;absolute extrusion mode
+M104 S0
 ;End of Gcode
 ```
 
