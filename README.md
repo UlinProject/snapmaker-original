@@ -179,6 +179,8 @@ There are no special recommendations here, and some parameters may not suit you.
 | number of extruders | 1 |
 | default extrusion length | 5 |
 
+<b>Please note</b> that if you are using 500000 baud, this needs to be specified in the Octoprint alternative speeds, but if you are using 250000 baud, nothing like that is required.
+
 #### UART
 <img src="./img/uart.JPG" width="21%"></img>
 
