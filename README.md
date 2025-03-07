@@ -31,11 +31,12 @@ Snapmaker is a registered trademark, to which I have no relation, you can always
 
 | name | value |
 | ---- | ----- |
-| cpu | stm32f105 (ARM; Flash: 128kB; 72MHz; SRAM: 64kB) |
+| cpu | gd32f105rc6 (ARM; Flash: 256kB; 72-108MHz; SRAM: 96kB) |
 | feedback | usb: ch340g (only 115200 boud, or 250000_boud/500000_boud in custom firmware) |
 | power unit | 24V 5A (120w) |
 | firmware | own firmware 2.11 based on marlin 1.1.0-RC6 (2016-04-24 12:00) |
-| gcode | marlin 1.1.0 + own set of instructions |
+| firmware | ... ./firmware/ |
+| gcode | marlin: (1.1.0 + own set of instructions) |
 | drivers | a4988 |
 
 The processor's performance fully covers the printer's capabilities, but the feedback significantly limits it due to the standard data transfer rate of 115200 baud. This is the first printer I know that prints better from a USB flash drive.
