@@ -232,7 +232,11 @@ There was a solution on the Internet using a paper accordion filter, which in th
 In general, it would be possible to simply desolder the a4988 with a hair dryer and replace them with tmc2209, since they have similar pinout, and also change the harness a little and maybe even run the setup via uart and sensorless pointing, but at the moment I decided not to do this. The reason for using tmc2209 is simple, it is the ability to greatly reduce the noise of the stepper motors, but the StealthChop algorithm can also cause problems with circular geometry, and because of the a4988, the stepper motors are very noisy even in standby mode.
 
 #### Klipper?
-Yes, this printer and this motherboard can be upgraded with Klipper, and I have most of the equipment to do it now, but I'm not doing it yet because I want to try a more original CNC and laser.
+Yes, this printer and this motherboard can be updated with Klipper, you can find the firmware in the firmwares called Klipper, you can simply follow the instructions and update the firmware without using JTAG or other means, just drop the file on a flash drive. Future updates of Klipper can be just as easy, also you can revert to the factory firmware at any time or to any other firmware.
+
+| name | version | mcu | rate |
+| ---- | ----- | ----- | ----- |
+| Klipper_6_2025Demo460800.Bin | 121 commands, v0.12.0-452-g75a10bfca-dirty-20250308_020116-r510 / gcc: (Arch Repository) 14.2.0 binutils: (GNU Binutils) 2.43) | GD32F105RC6 | ~242k/s (uart 480600 boud, rpi3, /dev/ttyS0) |
 
 #### Cura
 In general, you can use Luban, it has good settings for this printer on the old Cura engine, but it has a simpler setup interface and in some places even more thought out than Cura, but very limited in functionality. Or a completely different slicer, but I adapted specifically Cura.
