@@ -12,7 +12,7 @@ Snapmaker is a registered trademark, to which I have no relation, you can always
 | 32Base_2_11_01Demo250000BOUD.Bin | The first experiment on modifying this firmware, testing the reflashing method. | +uart 115200BOUD -> 250000BOUD; | +(only tests) |
 | 32Base_2_11_02Demo500000BOUDAndAdvancedOK | Second experiment, 500000BOUD and ADVANCED_OK tests. | +uart 115200BOUD -> 500000BOUD; +uart advanced_ok; | +(only tests) |
 | 32Base_2_11_04Demo500000BOUDAndMoreSerialMods | Experimenting with using the recommended settings for OctoPrint. | +uart 115200BOUD -> 500000BOUD; +uart advanced_ok; +fix: BLOCK_BUFFER_SIZE(8->64); +fix: BUFSIZE(8->32); +fix: RX_BUFFER_SIZE(512->2048); | +(only tests) |
-| Klipper_6_2025Demo460800.Bin | Experimental current (as of 2025) demo firmware klipper | ... | +(only tests) |
+| Klipper | <a href="./Klipper.md">See</a> | ... | +(only tests) |
 
 ## Is it possible to get a brick when flashing?
 Very low probability, since you can flash any firmware at any time, also remember that I am not responsible for your actions, you can use these firmwares only at your own risk.
@@ -28,6 +28,3 @@ Any firmware change resets the default settings, constantly having to adjust the
 - Then the LED turns off for about 2 seconds.
 - The LED starts blinking quickly.
 4. The flashing process is complete.
-
-## Don't forget to remove the flash drive
-The "klipper" firmware does not delete the "Update.Bin" file after flashing, so you can constantly reflash the device when you turn it on (even if you don't want to). It is better to either remove the flash drive or delete the "Update.Bin" file on it. In the Marlin firmware, this is done automatically.
