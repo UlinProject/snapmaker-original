@@ -1,0 +1,2 @@
+#### Brain cooling
+This is a more or less simple way to replace one of the fans, namely the fan in the brains with a 40mm fan (as far as I remember), in addition to the model itself, you will probably need a 12V converter (if you use a 12V fan) and a dremel to cut out the original plastic from the brains. Here is a printable model https://www.thingiverse.com/thing:6123116 (I am not the author of this model, it is simply in the public domain)
