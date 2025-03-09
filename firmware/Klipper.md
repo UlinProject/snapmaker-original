@@ -101,7 +101,7 @@ step_pin: PA4
 dir_pin: !PA1
 enable_pin: !PA0
 microsteps: 16
-rotation_distance: 34.7826086957 # 200 * 16 / 92.60 for default e-steps 92.60
+rotation_distance: 34.5572354212 # 200 * 16 / 92.60 for default e-steps 92.60
 heater_pin: !PB10
 sensor_type: ATC Semitec 104GT-2 # default
 # sensor_type: ATC Semitec 104NT-4-R025H42G # trianglelab
