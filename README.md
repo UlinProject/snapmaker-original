@@ -74,11 +74,11 @@ A thick aluminum plate on which the modular guides are located. The modular guid
 #### Accuracy
 The design features of the printer and the trapezoid shaft in the guides in combination with the "oak" a4988 should have shown good results, the manufacturer himself assures the accuracy of 50-300 microns. I calibrate each thread for accuracy and enter the data into the slicer, measuring with a caliper with a resolution of 0.01 mm and an error of 0.02 mm. In general, I get:
 
-| NAME | ~PETG | ~PLA |
-| ---- | ---- | ----- |
-| min absolute deviation (X and Y axes) | 0.02mm | 0.02mm |
-| average absolute deviation (X and Y axes) | 0.08mm | 0.12mm |
-| max absolute deviation (X and Y axes) | 0.17mm | 0.20mm |
+|                 NAME                      | PETG (default firmware)  | PLA (default firmware)  | PLA(klipper firmware +pa+is) |
+| ----------------------------------------- | ------------------------ | ----------------------- | ---------------------------- |
+| min absolute deviation (X and Y axes)     |         ~0.02mm          |         ~0.02mm         |            ~0.01mm           |
+| average absolute deviation (X and Y axes) |         ~0.08mm          |         ~0.12mm         |            ~0.07mm           |
+| max absolute deviation (X and Y axes)     |         ~0.17mm          |         ~0.20mm         |            ~0.09mm           |
 
 In general, I have summarized many results of different filaments under the general one and described the general deviation of the two axes. I would also like to note that this printer gives more accurate results on the X-axis than on the Y-axis.
 
