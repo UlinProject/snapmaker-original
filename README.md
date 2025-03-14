@@ -32,16 +32,15 @@ Snapmaker is a registered trademark, to which I have no relation, you can always
 | name | value |
 | ---- | ----- |
 | cpu | gd32f105rc6 (ARM; Flash: 256kB; 72-108MHz; SRAM: 96kB) |
-| feedback | usb: ch340g (only 115200 boud, or 250000_boud/500000_boud in custom firmware) |
+| feedback | usb: ch340g (only 115200 boud, or 250000_boud/500000_boud in custom firmware, stable 921600!) |
 | power unit | 24V 5A (120w) |
-| firmware | own firmware 2.11 based on marlin 1.1.0-RC6 (2016-04-24 12:00) |
-| firmware | ... ./firmware/ |
-| gcode | marlin: (1.1.0 + own set of instructions) |
+| factory firmware | own firmware 2.11 based on marlin 1.1.0-RC6 (2016-04-24 12:00), gcode: marlin 1.1.0 + own set of instructions |
+| firmware | ... <a href="./firmware/README.md">See all</a> |
 | drivers | a4988 |
 
-The processor's performance fully covers the printer's capabilities, but the feedback significantly limits it due to the standard data transfer rate of 115200 baud. This is the first printer I know that prints better from a USB flash drive.
+About factory firmware: The processor's performance fully covers the printer's capabilities, but the feedback significantly limits it due to the standard data transfer rate of 115200 baud. This is the first printer I know that prints better from a USB flash drive.
 
-#### Meanings and limitations
+#### Factory Firmware Values ​​and Limitations
 
 | name | value |
 | ---- | ----- |
@@ -66,7 +65,7 @@ The processor's performance fully covers the printer's capabilities, but the fee
 
 The printer manufacturer recommends a default head movement speed of 100 mm/s during printing, and a print speed of 40/50/60 mm/s and a retraction speed of 60 mm/s (at a distance of 5 mm).
 
-The printer has one bad feature in the firmware, namely if you forgot to move the carriage home after printing, and it is in the maximum position (and after printing it is always in the maximum position), then after turning the printer off and on and pressing the home button, you will get a short-term impact of the head on the Z-axis limiter. The impact itself on the Z-axis limiter is not very critical, but very unpleasant and can lead to self-unscrewing.
+The printer has one bad feature in the factory firmware, namely if you forgot to move the carriage home after printing, and it is in the maximum position (and after printing it is always in the maximum position), then after turning the printer off and on and pressing the home button, you will get a short-term impact of the head on the Z-axis limiter. The impact itself on the Z-axis limiter is not very critical, but very unpleasant and can lead to self-unscrewing.
 
 ### Physical
 A thick aluminum plate on which the modular guides are located. The modular guides are based on a stepper motor + rigid coupling + four-way trapezoidal shaft, on top of the guide there is a thin aluminum plate with a conventional limit switch. The guides used are absolutely identical to the guides along the X, Y, Z axes, the order of connection to the motherboard determines the belonging of the guide to the desired axis. The moving carriage is held by openbuilds rollers.
