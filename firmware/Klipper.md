@@ -13,6 +13,8 @@ Snapmaker is a registered trademark, to which I have no relation, you can always
 | Klipper_6_2025Demo460800.Bin | Experimental current (as of 2025) demo firmware klipper | +-(only tests) |
 | Klipper_7_2025_UART460800.Bin | Relevant for 2025, functionality is not cut, microcontroller frequency is set to factory. UART 460800 connection (via USB or directly). | +(only tests) |
 | Klipper_8_2025_UART250000.Bin | Relevant for 2025, functionality is not cut, microcontroller frequency is set to factory. UART 250000 connection (via USB or directly). | +(only tests) |
+| Klipper_9_2025_UART500000.Bin | Relevant for 2025, functionality is not cut, microcontroller frequency is set to factory. UART 500000 connection (via USB or directly). | +(only tests) |
+| Klipper_9_2025_UART921600.Bin | Relevant for 2025, functionality is not cut, microcontroller frequency is set to factory. UART 921600 connection (via USB or directly). | +(only tests) |
 
 ## How to reflash?
 1. Copy any file and rename it to Update.Bin to a USB disk formatted in Fat32.
@@ -29,8 +31,8 @@ The "klipper" firmware does not delete the "Update.Bin" file after flashing, so 
 ## Is it possible to return to the factory firmware?
 At any time, in the same way, by dropping the original Update.bin onto a flash drive.
 
-## 460800 or 250000?
-I can't give you an exact answer, but this printer works fine at 500000 baud, but officially klipper recommends 250000 and according to official statements this should be enough.
+## 921600/500000/460800/250000?
+I can't give you a definitive answer, but this printer works fine at 500,000 baud and above. I currently use 921600 regularly, but Klipper officially recommends 250,000, and according to official statements, that should be enough, but the overall command throughput may be low.
 
 ## How do I know if the firmware has loaded and is working?
 When the microcontroller is turned on, the red LED on the "brains" lights up, after activating the "clipper" on the single-board computer, the LED on the "brains" stops lighting up (or continues to light up, if you did not specify this in the configuration).
@@ -218,6 +220,3 @@ Don't forget to check the sensors on your device before printing, PID calibratio
 
 ## Can Luban be used?
 Most likely not, Luban does rollbacks strangely and I don't even know why, no oddities with rollbacks to gcode from Cura or similar slicers were noticed. But for starters, you can try to print test prints on Luban (on large models such oddities are less noticeable).
-
-## Weird initial positions that limit the useful area
-After switching to Cura or other slicers, you can experiment and set the correct initial values. These values ​​were made so that gcode would work on Luban, otherwise you would constantly hit your head on the printer's borders.
