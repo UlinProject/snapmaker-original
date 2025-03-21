@@ -32,7 +32,7 @@ Snapmaker is a registered trademark, to which I have no relation, you can always
 | name | value |
 | ---- | ----- |
 | cpu | gd32f105rc6 (ARM; Flash: 256kB; 72-108MHz; SRAM: 96kB) |
-| feedback | usb: ch340g (only 115200 boud, or 250000_boud/500000_boud in custom firmware, stable 921600!) |
+| feedback | usb: ch340g (only 115200 baudrate, or 250000_baudrate/500000_baudrate in custom firmware, stable 921600 baudrate!) |
 | power unit | 24V 5A (120w) |
 | factory firmware | own firmware 2.11 based on marlin 1.1.0-RC6 (2016-04-24 12:00), gcode: marlin 1.1.0 + own set of instructions |
 | firmware | ... <a href="./firmware/README.md">See all</a> |
@@ -159,14 +159,17 @@ There was a solution on the Internet using a paper accordion filter, which in th
 #### TMC2209? (stepper motor drivers)
 In general, it would be possible to simply desolder the a4988 with a hair dryer and replace them with tmc2209, since they have similar pinout, and also change the harness a little and maybe even run the setup via uart and sensorless pointing, but at the moment I decided not to do this. The reason for using tmc2209 is simple, it is the ability to greatly reduce the noise of the stepper motors, but the StealthChop algorithm can also cause problems with circular geometry, and because of the a4988, the stepper motors are very noisy even in standby mode.
 
-#### Klipper? (firmware)
+#### Klipper (firmware)
 Yes, this printer and this motherboard can be updated with Klipper, you can find the firmware in the firmwares called Klipper, you can simply follow the instructions and update the firmware without using JTAG or other means, just drop the file on a flash drive. Future updates of Klipper can be just as easy, also you can revert to the factory firmware at any time or to any other firmware.
 
 | name | version | mcu | rate |
 | ---- | ----- | ----- | ----- |
-| Klipper_6_2025Demo460800.Bin | 121 commands, v0.12.0-452-g75a10bfca-dirty-20250308_020116-r510 / gcc: (Arch Repository) 14.2.0 binutils: (GNU Binutils) 2.43) | GD32F105RC6 | ~242k/s (uart 480600 boud, rpi3, /dev/ttyS0) |
+| Klipper_6_2025Demo460800.Bin | 121 commands, v0.12.0-452-g75a10bfca-dirty-20250308_020116-r510 / gcc: (Arch Repository) 14.2.0 binutils: (GNU Binutils) 2.43) | GD32F105RC6 | uart 480600 baudrate |
 
 <a href="./firmware/Klipper.md">See</a>
+
+#### Resonance compensation (only for klipper firmware)
+<a href="./resonances/Readme.md">See</a>
 
 #### Cura (slicer)
 <a href="./cura/Readme.md">See</a>
