@@ -4,9 +4,9 @@
 It seems that this is exactly what this printer lacked from the factory. The printer itself has very good indicators on the X axis from the factory, but with the Y axis, not everything is so good even according to accuracy tests, after this calibration, the printer accuracy has increased significantly and it became possible to increase the acceleration, as well as print at higher speeds. I do not recommend making such accelerations as recommended by autocalibration, start from the fact that the acceleration from the factory is 1500 (on printing) / 3000 (on the laser), you can use 3000/6000 on printing, and maybe more, but I do not recommend you to set 76800/61500 right away, this is too much, remember that due to the features of the printer (trapezoidal shafts) the printer is subject to strong friction, you can thus wear out this printer very quickly, and I also recommend that you lubricate it more often.
 
 ## My results (Demo01)
-<img src="./resonances/demo_01_volcano_shaper_calibrate_x.png" width="80%"></img>
+<img src="./demo_01_volcano_shaper_calibrate_x.png" width="80%"></img>
 
-<img src="./resonances/demo_01_def_shaper_calibrate_y.png" width="80%"></img>
+<img src="./demo_01_def_shaper_calibrate_y.png" width="80%"></img>
 
 X:
 ```
