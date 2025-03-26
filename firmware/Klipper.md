@@ -7,7 +7,6 @@ The firmware presented here is provided as is, I am not responsible for your dam
 Snapmaker is a registered trademark, to which I have no relation, you can always contact the official contacts listed on the website snapmaker.com. All rights reserved.
 
 ## Firmware
-
 | name | value | stable |
 | ---- | ----- | ----- |
 | Klipper_6_2025Demo460800.Bin | Experimental current (as of 2025) demo firmware klipper | +-(only tests) |
@@ -31,8 +30,17 @@ At any time, in the same way, by dropping the original Update.bin onto a flash d
 ## 921600/500000/460800/250000?
 I can't give you a definitive answer, but this printer works fine at 500,000 baud and above. I currently use 921600 regularly, but Klipper officially recommends 250,000, and according to official statements, that should be enough, but the overall command throughput may be low.
 
+## Which single board computer to use?
+This printer is not demanding on the performance of the single board computer, but it is recommended to take a single board computer not lower than the Raspberry pi 3, Raspberry pi 4/5, and zero 2w versions (be careful with the zero versions, you only have 512 MB of RAM or even less because of the graphics processor, this can greatly limit you). You can also consider similar solutions based on OrangePi, NanoPi I only determined the minimum system requirements on which the printer works perfectly.
+
 ## How do I know if the firmware has loaded and is working?
 When the microcontroller is turned on, the red LED on the "brains" lights up, after activating the "clipper" on the single-board computer, the LED on the "brains" stops lighting up (or continues to light up, if you did not specify this in the configuration).
+
+## I want to add additional sensors that were never in the printer, what to do?
+You can bring out many contacts from the main gd32f105 brains, but the best solution is to use an additional mcu.
+Klipper allows you to connect many different microcontrollers, it all depends on your choice. The most optimal, complete and simple solution is to use the rp2040 (which, according to the new firmware, runs at 200 MHz!), and requires a simple usb connection to connect to klipper.
+
+I also added a few other firmware for mcu, these are stm32f103 and atmega328p. I do not recommend using the firmware based on atmega328p, as it is very stripped down and was intended only for those people who just want to add very useful functionality to the printer from the factory (backlight, fan control).
 
 ## Run "printer.cfg"
 Here I can't give exact recommendations what your "ideal" and correct configuration should be, it may differ, since my device is not so original. Speed ​​settings, acceleration, extruder steps, everything was adapted to the factory ones from the factory firmware. Just use it as a starter!
