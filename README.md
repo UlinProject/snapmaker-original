@@ -19,9 +19,10 @@ I have been developing devices similar to 3D printers for a long time, I even cr
 My specific printer was manufactured in 2020-2021, and the printer model itself was first manufactured even earlier, around 2017-2018.
 
 ## Disclaimer
-The information presented here is solely my opinion and may be both useful and harmful to the end user. All actions described are solely my experience, the end user can repeat my actions only at their own risk. Damage to your device can occur at any stage of the end user's actions. All images presented here are the property of their authors.
-
-Snapmaker is a registered trademark, to which I have no relation, you can always contact the official contacts listed on the website snapmaker.com. All rights reserved.
+| :boom: Disclaimer          |
+|:---------------------------|
+|  :warning:  The information presented here is solely my opinion and may be both useful and harmful to the end user. All actions described are solely my experience, the end user can repeat my actions only at their own risk. Damage to your device can occur at any stage of the end user's actions. All images presented here are the property of their authors. |
+|  :warning:  Snapmaker is a registered trademark, to which I have no relation, you can always contact the official contacts listed on the website snapmaker.com. All rights reserved. |
 
 ## Specifications
 
