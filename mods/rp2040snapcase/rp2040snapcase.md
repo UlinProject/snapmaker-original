@@ -4,17 +4,17 @@ Addition of a miniature rp2040 microcontroller for interaction and control of ad
 
 #### 1A
 
-<img src="../img/rp2040snapcase/1a.jpg" width="30%"></img>
-<img src="../img/rp2040snapcase/1a1make.jpg" width="30%"></img>
-<img src="../img/rp2040snapcase/1a2make.jpg" width="30%"></img>
-<img src="../img/rp2040snapcase/1aback.jpg" width="30%"></img>
-<img src="../img/rp2040snapcase/1ainstalled.jpg" width="30%"></img>
+<img src="../../img/rp2040snapcase/1a.jpg" width="20%"></img>
+<img src="../../img/rp2040snapcase/1a1make.jpg" width="30%"></img>
+<img src="../../img/rp2040snapcase/1a2make.jpg" width="30%"></img>
+<img src="../../img/rp2040snapcase/1aback.jpg" width="30%"></img>
+<img src="../../img/rp2040snapcase/1ainstalled.jpg" width="30%"></img>
 
 #### 2A
 
-<img src="../img/rp2040snapcase/2a1.jpg" width="30%"></img>
-<img src="../img/rp2040snapcase/2a2.jpg" width="30%"></img>
-<img src="../img/rp2040snapcase/2a1make.jpg" width="30%"></img>
+<img src="../../img/rp2040snapcase/2a1.jpg" width="30%"></img>
+<img src="../../img/rp2040snapcase/2a2.jpg" width="30%"></img>
+<img src="../../img/rp2040snapcase/2a1make.jpg" width="30%"></img>
 
 ## License
 
