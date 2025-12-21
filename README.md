@@ -19,10 +19,12 @@ I have been developing devices similar to 3D printers for a long time, I even cr
 My specific printer was manufactured in 2020-2021, and the printer model itself was first manufactured even earlier, around 2017-2018.
 
 ## Disclaimer
-| :boom: Disclaimer          |
-|:---------------------------|
-|  :warning:  The information presented here is solely my opinion and may be both useful and harmful to the end user. All actions described are solely my experience, the end user can repeat my actions only at their own risk. Damage to your device can occur at any stage of the end user's actions. All images presented here are the property of their authors. |
-|  :warning:  Snapmaker is a registered trademark, to which I have no relation, you can always contact the official contacts listed on the website snapmaker.com. All rights reserved. |
+| :boom: Disclaimer |
+|:------------------|
+| :warning: Snapmaker is a registered trademark. The author has no affiliation with Snapmaker and does not provide hardware advice. For official support, please refer to the contacts listed on snapmaker. |
+| :warning: Your actions and the information described here are entirely at your own risk. The author is not responsible for any damage to your devices. |
+| :warning: All information provided is based on personal research and may contain errors. |
+| :warning: This material is for informational purposes only. |
 
 ## Specifications
 
@@ -32,7 +34,7 @@ My specific printer was manufactured in 2020-2021, and the printer model itself 
 
 | name | value |
 | ---- | ----- |
-| cpu | gd32f105rc6 (ARM; Flash: 256kB; 72-108MHz; SRAM: 96kB) |
+| cpu | gd32f105rc6 (ARM; Flash: 256kB; 72-108MHz; External 16Mhz clock; SRAM: 96kB) |
 | feedback | usb: ch340g (only 115200 baudrate, or 250000_baudrate/500000_baudrate in custom firmware, stable 921600 baudrate!) |
 | power unit | 24V 5A (120w) |
 | factory firmware | own firmware 2.11 based on marlin 1.1.0-RC6 (2016-04-24 12:00), gcode: marlin 1.1.0 + own set of instructions |
