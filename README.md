@@ -34,7 +34,7 @@ My specific printer was manufactured in 2020-2021, and the printer model itself 
 
 | name | value |
 | ---- | ----- |
-| cpu | gd32f105rc6 (ARM; Flash: 256kB; 72-108MHz; External 16Mhz clock; SRAM: 96kB) |
+| cpu | gd32f105rc6 (ARM; Flash: 256kB; 72-108MHz; external 16Mhz clock; SRAM: 96kB) |
 | feedback | usb: ch340g (only 115200 baudrate, or 250000_baudrate/500000_baudrate in custom firmware, stable 921600 baudrate!) |
 | power unit | 24V 5A (120w) |
 | factory firmware | own firmware 2.11 based on marlin 1.1.0-RC6 (2016-04-24 12:00), gcode: marlin 1.1.0 + own set of instructions |
