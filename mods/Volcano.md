@@ -29,3 +29,22 @@ And then I had to set it up for a long time, the extruder became many times long
 According to the tests, the extruder began to heat up many times longer, and the correctness of the readings was also unclear. Having printed the first test calibration models, I was convinced of the strangeness of the extrusion, if earlier it was necessary to reduce the feed to 98% (with the standard 100%), now according to the tests the feed had to be increased to 101%, which is strange, and the models became worse, and some even better, and the quality of the output plastic filament became many times better. I also had to recalibrate the surface, since the extruder itself is on a screw connection (inaccuracies in parallelism relative to the "bed") and the Y axis was previously increased. After recalibrating the "bed" I managed to lower the fan lower and faced the fact that printing always ended with complete detachment of the model, after a long recalibration of the model it turned out that the standard 205/200 (first layer and final layer) degrees are not enough for printing PLA, I had to increase the temperature to 220 and 217 (at 215 the extruder has a hard time), which gave generally good prints.
 
 <img src="../img/volcano/demo8_manualtemperature_selection.JPG" width="11%"></img>
+
+#### VolcanoRaiseZ-Axis
+To install the Vulcan hotend modification, you need to raise the Z-axis. You can use my <a href="./VolcanoRaiseZ-Axis.stl">model</a>, and it's best printed in PETG (note that my model was adjusted to fit my printer; always check carefully, otherwise the nozzle will hit the platform. If you notice that the height isn't enough, adjust the Z-axis in the model in the slicer!).
+
+## License
+
+These STL model (VolcanoRaiseZ-Axis.stl) are licensed under the **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)** license.
+
+You are free to:
+- Print and use this model for non-commercial purposes
+- Modify and adapt the model
+- Share derivative works, provided the terms are respected
+
+Under the following terms:
+- You must give proper credit to the original creator — **#UlinProject** or **Denis Kotlyarov**
+- You may not use the model or its derivatives for commercial purposes without explicit permission
+
+Full license text: [CC BY-NC 4.0 Legal Code](https://creativecommons.org/licenses/by-nc/4.0/legalcode)
+
