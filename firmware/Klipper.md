@@ -10,7 +10,8 @@ Snapmaker is a registered trademark, to which I have no relation, you can always
 | name | value | stable |
 | ---- | ----- | ----- |
 | Klipper_6_2025Demo460800.Bin | Experimental current (as of 2025) demo firmware klipper | +-(only tests) |
-| Klipper_10_v0.12.0_2025.zip | Relevant for 2025, functionality is not cut. Firmware in the archive, you need to unpack and select the desired baudrate, if you do not know the baudrate take 250000, ONLY UART (UART via USB or directly). | +(only tests) |
+| Klipper_10_v0.12.0_2025.zip | Relevant for start 2025, functionality is not cut. Firmware in the archive, you need to unpack and select the desired baudrate, if you do not know the baudrate take 250000, ONLY UART (UART via USB or directly). | +(only tests) |
+| Klipper_12_v0.13.0_2025.zip | Relevant for 2025-2026, functionality is not cut. Firmware in the archive, you need to unpack and select the desired baudrate, if you do not know the baudrate take 250000, ONLY UART (UART via USB or directly). | +(only tests) |
 
 ## How to reflash?
 1. Copy any file and rename it to Update.Bin to a USB disk formatted in Fat32.
