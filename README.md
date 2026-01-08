@@ -14,7 +14,7 @@
 </div>
 
 ## Description
-I have been developing devices similar to 3D printers for a long time, I even created one self-assembling Cartesian printer based on a clipper (stm32f407, rails, belts) practically from scratch and one fine day, while studying a local trading platform, I came across this small and interesting printer. Initially, I was not interested in the quality of its 3D printing (I thought that if it prints, then it is already good), and I was only interested in its CNC capabilities and 3 in 1 technologies (3D, CNC, LASER).
+I have been developing devices similar to 3D printers for a long time, I even created one self-assembling Cartesian printer based on a klipper (stm32f407, rails, belts) practically from scratch and one fine day, while studying a local trading platform, I came across this small and interesting printer. Initially, I was not interested in the quality of its 3D printing (I thought that if it prints, then it is already good), and I was only interested in its CNC capabilities and 3 in 1 technologies (3D, CNC, LASER).
 
 My specific printer was manufactured in 2020-2021, and the printer model itself was first manufactured even earlier, around 2017-2018.
 
