@@ -31,6 +31,8 @@ At any time, in the same way, by dropping the original Update.bin onto a flash d
 ## 921600/500000/460800/250000?
 I can't give you a definitive answer, but this printer works fine at 500,000 baud and above. I currently use 921600 regularly, but Klipper officially recommends 250,000, and according to official statements, that should be enough, but the overall command throughput may be low.
 
+<i>After switching to a detachable UART cable (previously, it was simply soldered on, which was a nuisance), I once experienced an MCU timeout and stopped using the 921600, but the 460800 is quite stable under all conditions.</i>
+
 ## Which single board computer to use?
 This printer is not demanding on the performance of the single board computer, but it is recommended to take a single board computer not lower than the Raspberry pi 3, Raspberry pi 4/5, and zero 2w versions (be careful with the zero versions, you only have 512 MB of RAM or even less because of the graphics processor, this can greatly limit you). You can also consider similar solutions based on OrangePi, NanoPi I only determined the minimum system requirements on which the printer works perfectly.
 
@@ -64,35 +66,40 @@ max_velocity: 300 # test 140
 max_accel: 1000 # test 3000
 max_z_velocity: 5 # test 20
 max_z_accel: 100 #  test 500
-square_corner_velocity: 12.0 # test 4
+square_corner_velocity: 4.0 # test 7-12
 
 [stepper_x]
+# brain_channel num: 1
 step_pin: PB5
 dir_pin: !PB6
 enable_pin: !PB7
 microsteps: 16
 rotation_distance: 8 # 200 * 16 / 400.00
 endstop_pin: ^!PC11
-#position_endstop: -4.50
-position_endstop: -10
-position_min: -10
+position_endstop: -4
+position_min: -4
 position_max: 120
+# If you need more than 120, check your configuration. You can get by with 124-125, or even 126... but I've noticed that the maximum value varies depending on the axle, and this is the factory value; for reasons unknown to me, it fluctuates between 1 and 2 or 3. To test, simply increase the maximum value to 126, and then gradually increase it by 1 from 120. If you hear a knocking sound, that's your maximum value. It's best to never exceed or even set the limit at which you'll hear a knocking sound.
+
 homing_speed: 12
 
 [stepper_y]
+# brain_channel num: 2
 step_pin: PB8
 dir_pin: !PB9
 enable_pin: !PB4
 microsteps: 16
 rotation_distance: 8 # 200 * 16 / 400.00
 endstop_pin: ^!PC10
-#position_endstop: -3.50
-position_endstop: -10
-position_min: -10
+position_endstop: -4
+position_min: -4
 position_max: 120
+# If you need more than 120, check your configuration. You can get by with 124-125, or even 126... but I've noticed that the maximum value varies depending on the axle, and this is the factory value; for reasons unknown to me, it fluctuates between 1 and 2 or 3. To test, simply increase the maximum value to 126, and then gradually increase it by 1 from 120. If you hear a knocking sound, that's your maximum value. It's best to never exceed or even set the limit at which you'll hear a knocking sound.
+
 homing_speed: 12
 
 [stepper_z]
+# brain_channel num: 3
 step_pin: PB3
 dir_pin: !PD2
 enable_pin: !PC12
@@ -105,6 +112,7 @@ position_max: 125.5
 homing_speed: 9
 
 [extruder]
+# brain_channel num: RJ45
 step_pin: PA4
 dir_pin: !PA1
 enable_pin: !PA0
@@ -188,10 +196,16 @@ min_y = 10.0
 max_y = 115.0
 
 [firmware_retraction]
-retract_length: 5.0
-retract_speed: 60
-unretract_extra_length: 0.0
-unretract_speed: 60
+retract_length: 5.0 # from the factory
+retract_speed: 60 # from the factory
+unretract_extra_length: 0.0 # from the factory
+unretract_speed: 60 # from the factory
+
+#[firmware_retraction]
+#retract_length: 0.6
+#retract_speed: 40
+#unretract_extra_length: 0.0
+#unretract_speed: 20
 
 [gcode_arcs]
 #resolution: 1.0
@@ -202,15 +216,32 @@ gcode:
 [gcode_macro M1005]
 gcode:
 
+[force_move]
+enable_force_move: 1
+
 [homing_override]
 gcode:
+    # To protect the thermal barrier, nozzle, and platform, we always try to raise the Z-axis, 
+    # as it was in the original firmware. Don't leave the printer at home with the home coordinates completely 
+    # lost and the Z-axis fully extended!
+    {% if 'z' not in printer.toolhead.homed_axes %}
+        FORCE_MOVE STEPPER=stepper_z DISTANCE=10 VELOCITY=5
+    {% else %}
+        {% if printer.toolhead.position.z < 100 %}
+            G91
+            G1 Z10 F1200
+            G90
+        {% endif %}
+    {% endif %}
+
     G28 X
     G28 Y
     G28 Z
     
-    G1 Z-2 F1000
+    G1 Z-1 F1200
 
 #[stepper_z2]
+# brain_channel num: 5
 #step_pin: PC2
 #dir_pin: !PC1
 #enable_pin: !PC3
@@ -226,3 +257,4 @@ Don't forget to check the sensors on your device before printing, PID calibratio
 
 ## Can Luban be used?
 Most likely not, Luban does rollbacks strangely and I don't even know why, no oddities with rollbacks to gcode from Cura or similar slicers were noticed. But for starters, you can try to print test prints on Luban (on large models such oddities are less noticeable).
+
