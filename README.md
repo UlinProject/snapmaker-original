@@ -99,7 +99,17 @@ A very good solution, you can just take it as a phone and control the printer, a
 #### Extruder (3D)
 A classic extruder built on the basis of an unknown to me full-size nemo 17 (42HD4414-07 2020/08/19) from mocotech and gears (factory e-steps 92.60), a radiator noticeably larger than its classic versions, a convenient unknown to me thermal barrier, which involves fastening by screwing in one countersunk screw. By selection, it was established that the heating block itself is E3D V5, but with an unknown to me thermal barrier, which does not imply unscrewing from the block.
 
-A significant drawback of the extruder is the use of a "drop" thermistor instead of a "capsule" one, the sensor itself simply dangles in the heating block. The manufacturer also provided a way to easily remove the lid and unscrew the thermal block, but due to the rigid wires of the heater, the extraction method is not the easiest. Also, if a "plastic plug" accidentally gets into the extruder during printing, you will have to sort out the entire head, and this is a very long and tedious task. Also, the thermal block itself does not have thermal insulation and, in combination with a not very successful PID, the temperatures constantly jump.
+##### Bad design #1 (3D)
+Instead of a capsule thermistor, a "droplet" type is used; the sensor itself is simply suspended inside the heating block and can move freely within it.
+
+##### Bad design #2 (3D)
+The manufacturer has provided a way to easily remove the cover and unscrew the fuser unit, but the rigid heating wires make it somewhat difficult to remove. Furthermore, if the "plastic plug" accidentally gets into the extruder during printing, the entire print head must be disassembled, a very time-consuming and tedious task.
+
+##### Bad design #3 (3D)
+The heating block itself is not insulated and, combined with an ineffective PID controller, the temperature fluctuates constantly.
+
+##### Bad design #4 (3D)
+The wire cross-section from the "brain" to the extruder head is small. Significant heating was observed, and the wire at best outputs 1.49 A with a voltage drop of 1.5 V (using a ~40 W extruder will only deliver ~35 W, and even then, the resistance will fluctuate as the heater heats up. Switching to an external MOSFET with higher-quality wire resulted in a voltage drop of 0.1-0.2 V and an output power of approximately ~38 W using the same heat block).
 
 #### Bed (3D)
 The textolite is small in size (128x128 mm), heating is exclusively resistive (24V, did not determine the power), heating up to 60-65 degrees is preferable (It is believed that temperatures above 80 degrees can damage the sticker coating). The main disadvantage of this table is the lack of insulation and all the heat is directed both to the platform itself and to heating its base (guide). Also, the bolts for fastening the platform to the guide are slightly larger than required, because of this, the screws themselves cut into the sticker glued to the platform a little (it is recommended to simply add a washer between the screw and the carriage, and then the screw will never damage the coating.). Another plus is that this sticker does not require any glue at all when printing PLA / PETG.
