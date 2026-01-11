@@ -198,7 +198,7 @@ Yes, this printer and this motherboard can be updated with Klipper, you can find
 | sensor | 104NT-4 R025H42G in the sleeve (TriangleLab) |
 | nozzle | E3D Volcano 0.4 (TriangleLab) |
 | thermal barrier | unknown (the factory hole diameter was used, the thread was cut without additional drilling, and the heat break was simply selected and is unknown to me (the modifications to the heatsink suggest compatibility with factory heat breaks)). |
-| lighting | ws2812b (5V, RP2040) |
+| lighting | ws2812b ribbon (5V, RP2040) |
 | fan | 50mmX50mm 12V extruder (always on), DEFAULT CONFIGURATION |
 | firmware | brain: klipper (v0.12.0, UART 921600baudrate), rp2040: klipper (v0.12.0, USB) |
 
@@ -212,7 +212,7 @@ Yes, this printer and this motherboard can be updated with Klipper, you can find
 | nozzle | E3D Volcano 0.4 (TriangleLab) |
 | thermal barrier | titanium V6 (TriangleLab) (the heatsink was drilled out to a new, larger diameter, a new thread was cut, and an additional hole was made in the heatsink for installing another mounting screw for the heat break.) |
 | wiring | general protection of all grounded wires, general grounding |
-| lighting | ws2812b (5V, RP2040) |
+| lighting | ws2812b ribbon (5V, RP2040) |
 | fan | 50x50mm 12V cooling extruder (only ON/OFF, always enabled by default if there is no control from the MCU, dc-dc LM2596S, PCA9685+LinuxMcu), default print_fan 24V (PWM 0-100%, module mosfet LR7843, PCA9685+LinuxMcu), 80x80mm 5V power unit (only ON/OFF, always enabled by default if there is no control from the MCU, dc-dc LM2596S, PCA9685+LinuxMcu+DS18B20), 80x80mm brain 5V cooling fan (PWM 0-100%, module mosfet LR7843, PCA9685+LinuxMcu+GD32F105InternalADCSensor)|
 | firmware | klipper (v0.13.0, UART 460800baudrate), rp2040: klipper (v0.13.0, USB), linux_mcu: klipper (v0.13.0, internal process) |
 
