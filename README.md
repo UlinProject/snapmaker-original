@@ -97,7 +97,7 @@ A very good solution, you can just take it as a phone and control the printer, a
 ### 3 In one
 
 #### Extruder (3D)
-A classic extruder built on the basis of an unknown to me full-size nemo 17 (42HD4414-07 2020/08/19) from mocotech and gears (factory e-steps 92.60), a radiator noticeably larger than its classic versions, a convenient unknown to me thermal barrier, which involves fastening by screwing in one countersunk screw. By selection, it was established that the heating block itself is E3D V5, but with an unknown to me thermal barrier, which does not imply unscrewing from the block.
+A classic extruder built on the basis of an unknown to me full-size nemo 17 (1.8°(200), 42HD4414-07, 2020/08/19) from mocotech and gears (1:1, factory e-steps 92.60), a radiator noticeably larger than its classic versions, a convenient unknown to me thermal barrier, which involves fastening by screwing in one countersunk screw. By selection, it was established that the heating block itself is E3D V5, but with an unknown to me thermal barrier, which does not imply unscrewing from the block.
 
 ##### Bad design #1 (3D)
 Instead of a capsule thermistor, a "droplet" type is used; the sensor itself is simply suspended inside the heating block and can move freely within it.
