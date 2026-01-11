@@ -189,16 +189,32 @@ Yes, this printer and this motherboard can be updated with Klipper, you can find
 #### Cura (slicer)
 <a href="./cura/Readme.md">See</a>
 
-#### My configuration for 2025
+#### My configuration (2025)
 
 | name | value |
 | ---- | ----- |
-| heat block | Volcano Plated Copper with insulator (TriangleLab) |
-| heater | 24V 40W (TriangleLab) |
+| heat block | volcano Plated Copper with insulator (TriangleLab) |
+| heater | 24V 40W (TriangleLab), factory power limitation for the wires is approximately ~35W |
 | sensor | 104NT-4 R025H42G in the sleeve (TriangleLab) |
-| nozzle | E3D Volcano (TriangleLab) |
-| thermal barrier | unknown |
-| firmware | klipper |
+| nozzle | E3D Volcano 0.4 (TriangleLab) |
+| thermal barrier | unknown (The factory hole diameter was used, the thread was cut without additional drilling, and the heat break was simply selected and is unknown to me (the modifications to the heatsink suggest compatibility with factory heat breaks)). |
+| lighting | ws2812b (5V, RP2040) |
+| fan | 50mmX50mm 12V extruder (always on), DEFAULT CONFIGURATION |
+| firmware | brain: klipper (v0.12.0, UART 921600baudrate), rp2040: klipper (v0.12.0, USB) |
+
+#### My configuration (2026)
+
+| name | value |
+| ---- | ----- |
+| heat block | volcano Plated Copper with insulator (TriangleLab) |
+| heater | 24V 40W (TriangleLab), external MOSFET LR7843+new_wiring (support: 40,50,60,80..~120W) |
+| sensor | 104NT-4 R025H42G in the sleeve (TriangleLab) |
+| nozzle | E3D Volcano 0.4 (TriangleLab) |
+| thermal barrier | titanium V6 (TriangleLab) (radiator drilled, new threads cut, radiator drilled for installation of another mounting screw) |
+| wiring | general protection of all grounded wires, general grounding |
+| lighting | ws2812b (5V, RP2040) |
+| fan | 50x50mm 12V cooling extruder (only ON/OFF, dc-dc LM2596S, PCA96855+LinuxMcu), default print_fan 24V (PWM 0-100%, module mosfet LR7843, PCA96855+LinuxMcu), 80x80mm 5V power unit (only ON/OFF, dc-dc LM2596S, PCA96855+LinuxMcu+DS18B20), 80x80mm brain 5V cooling fan (PWM 0-100%, module mosfet LR7843, PCA96855+LinuxMcu+GD32F105InternalAdcSensor)|
+| firmware | klipper (v0.13.0, UART 460800baudrate), rp2040: klipper (v0.13.0, USB), linux_mcu: klipper (v0.13.0, internal process) |
 
 ## General impressions
 <img src="./img/imprint2.JPG" width="11%"></img>
