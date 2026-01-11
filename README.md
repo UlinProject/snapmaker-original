@@ -213,7 +213,7 @@ Yes, this printer and this motherboard can be updated with Klipper, you can find
 | thermal barrier | titanium V6 (TriangleLab) (the heatsink was drilled out to a new, larger diameter, a new thread was cut, and an additional hole was made in the heatsink for installing another mounting screw for the heat break.) |
 | wiring | general protection of all grounded wires, general grounding |
 | lighting | ws2812b (5V, RP2040) |
-| fan | 50x50mm 12V cooling extruder (only ON/OFF, dc-dc LM2596S, PCA9685+LinuxMcu), default print_fan 24V (PWM 0-100%, module mosfet LR7843, PCA9685+LinuxMcu), 80x80mm 5V power unit (only ON/OFF, dc-dc LM2596S, PCA9685+LinuxMcu+DS18B20), 80x80mm brain 5V cooling fan (PWM 0-100%, module mosfet LR7843, PCA9685+LinuxMcu+GD32F105InternalAdcSensor)|
+| fan | 50x50mm 12V cooling extruder (only ON/OFF, always enabled by default if there is no control from the MCU, dc-dc LM2596S, PCA9685+LinuxMcu), default print_fan 24V (PWM 0-100%, module mosfet LR7843, PCA9685+LinuxMcu), 80x80mm 5V power unit (only ON/OFF, always enabled by default if there is no control from the MCU, dc-dc LM2596S, PCA9685+LinuxMcu+DS18B20), 80x80mm brain 5V cooling fan (PWM 0-100%, module mosfet LR7843, PCA9685+LinuxMcu+GD32F105InternalADCSensor)|
 | firmware | klipper (v0.13.0, UART 460800baudrate), rp2040: klipper (v0.13.0, USB), linux_mcu: klipper (v0.13.0, internal process) |
 
 ## General impressions
