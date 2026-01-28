@@ -39,7 +39,8 @@ My specific printer was manufactured in 2020-2021, and the printer model itself 
 | power unit | 24V 5A (120w) |
 | factory firmware | own firmware 2.11 based on marlin 1.1.0-RC6 (2016-04-24 12:00), gcode: marlin 1.1.0 + own set of instructions |
 | firmware | ... <a href="./firmware/README.md">See all</a> |
-| drivers | a4988 |
+| stepper motors | extruder Unknown 42HD4414-07 (1.8°(200), 2020/08/19) from mocotech, X Unknown 42HD4428-06 (1.8°(200), 2020/09/03) from mocotech, Y Unknown 42HD4428-06 (1.8°(200), 2020/09/03) from mocotech, Z Unknown 42HD4428-06 (1.8°(200), 2020/09/03) from mocotech|
+| drivers | extruder-rj45 (a4988, 16 steps, 0.44vref, ~0.56A), X (a4988, 16 steps, 0.87vref, ~1A), Y (a4988, 16 steps, 0.87vref, ~1A), Z1 (a4988, 16 steps, 0.87vref, ~1A), Z2 (X (a4988, 16 steps, 0.87vref, ~1A)|
 
 About factory firmware: The processor's performance fully covers the printer's capabilities, but the feedback significantly limits it due to the standard data transfer rate of 115200 baud. This is the first printer I know that prints better from a USB flash drive.
 
@@ -200,6 +201,7 @@ Yes, this printer and this motherboard can be updated with Klipper, you can find
 | thermal barrier | unknown (the factory hole diameter was used, the thread was cut without additional drilling, and the heat break was simply selected and is unknown to me (the modifications to the heatsink suggest compatibility with factory heat breaks)). |
 | lighting | ws2812b ribbon (5V, RP2040) |
 | fan | 50mmX50mm 12V extruder (always on), DEFAULT CONFIGURATION |
+| stepper motors | extruder default Unknown 42HD4414-07 |
 | firmware | brain: klipper (v0.12.0, UART 921600baudrate), rp2040: klipper (v0.12.0, USB) |
 
 #### My configuration (2026)
@@ -214,6 +216,7 @@ Yes, this printer and this motherboard can be updated with Klipper, you can find
 | wiring | general protection of all grounded wires, general grounding |
 | lighting | ws2812b ribbon (5V, RP2040) |
 | fan | 50x50mm 12V cooling extruder (only ON/OFF, always enabled by default if there is no control from the MCU, dc-dc LM2596S, PCA9685+LinuxMcu), default print_fan 24V (PWM 0-100%, module mosfet LR7843, PCA9685+LinuxMcu), 80x80mm 5V power unit (only ON/OFF, always enabled by default if there is no control from the MCU, dc-dc LM2596S, PCA9685+LinuxMcu+DS18B20), 80x80mm brain 5V cooling fan (PWM 0-100%, module mosfet LR7843, PCA9685+LinuxMcu+GD32F105InternalADCSensor)|
+| stepper motors | extruder 17HS4401S (0.9°, configured 1.34А) |
 | firmware | klipper (v0.13.0, UART 460800baudrate), rp2040: klipper (v0.13.0, USB), linux_mcu: klipper (v0.13.0, internal process) |
 
 ## General impressions
