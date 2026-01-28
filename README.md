@@ -217,6 +217,7 @@ Yes, this printer and this motherboard can be updated with Klipper, you can find
 | lighting | ws2812b ribbon (5V, RP2040) |
 | fan | 50x50mm 12V cooling extruder (only ON/OFF, always enabled by default if there is no control from the MCU, dc-dc LM2596S, PCA9685+LinuxMcu), default print_fan 24V (PWM 0-100%, module mosfet LR7843, PCA9685+LinuxMcu), 80x80mm 5V power unit (only ON/OFF, always enabled by default if there is no control from the MCU, dc-dc LM2596S, PCA9685+LinuxMcu+DS18B20), 80x80mm brain 5V cooling fan (PWM 0-100%, module mosfet LR7843, PCA9685+LinuxMcu+GD32F105InternalADCSensor)|
 | stepper motors | extruder 17HS4401S (0.9°, configured 1.34А) |
+| axis | modified with thrust bearing, new graphite screw nuts (all axles) |
 | firmware | klipper (v0.13.0, UART 460800baudrate), rp2040: klipper (v0.13.0, USB), linux_mcu: klipper (v0.13.0, internal process) |
 
 ## General impressions
