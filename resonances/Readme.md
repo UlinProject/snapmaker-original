@@ -129,7 +129,7 @@ restart_method: command
 [adxl345 AXES_X_OR_Y]
 cs_pin: mcu2:PA4
 spi_speed: 5000000
-axes_map: y, x, z
+# axes_map: y, x, z # Change only if you think it is necessary to ensure that the axes match.
 spi_bus: spi1
 rate: 3200
 
