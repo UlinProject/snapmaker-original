@@ -3,7 +3,11 @@
 ## Description
 It seems that this is exactly what this printer lacked from the factory. The printer itself has very good indicators on the X axis from the factory, but with the Y axis, not everything is so good even according to accuracy tests, after this calibration, the printer accuracy has increased significantly and it became possible to increase the acceleration, as well as print at higher speeds. I do not recommend making such accelerations as recommended by autocalibration, start from the fact that the acceleration from the factory is 1500 (on printing) / 3000 (on the laser), you can use 3000/6000 on printing, and maybe more, but I do not recommend you to set 76800/61500 right away, this is too much, remember that due to the features of the printer (trapezoidal shafts) the printer is subject to strong friction, you can thus wear out this printer very quickly, and I also recommend that you lubricate it more often.
 
-## My results (Demo01)
+<b>Please note that polyoxymethylene (POM) nuts are officially considered lubrication-free; they operate on the dry lubrication principle, and lubrication will only increase dust adhesion. However, lubrication has been proven to reduce friction even on POM nuts, and I use specialized lubricants that reduce dust adhesion. Your choice should be based solely on your own needs.</b>
+
+<details>
+  <summary>## My results (Demo01, standard configuration)</summary>
+    
 <img src="./v.0.12_demo_01_volcano_shaper_calibrate_x.png" width="80%"></img>
 
 <img src="./v.0.12_demo_01_def_shaper_calibrate_y.png" width="80%"></img>
@@ -50,6 +54,67 @@ shaper_freq_y: 131.2
 ```
 
 Yes, the Y axis is limited to a max of 12600 acceleration, but that seems to be the best the shaper can offer on that axis with minimal vibration.
+  
+</details>
+
+
+<details>
+  <summary>## My results (2026, design changes)</summary>
+    
+<img src="./v0.13_shaper_calibrate_x2_20260129_115147.png" width="80%"></img>
+
+<img src="./v0.13_shaper_calibrate_y2_20260129_115147.png" width="80%"></img>
+
+X:
+```
+// Fitted shaper 'zv' frequency = 126.6 Hz (vibrations = 1.4%, smoothing ~= 0.013)1
+// To avoid too much smoothing with 'zv', suggested max_accel <= 62500 mm/sec
+// Fitted shaper 'mzv' frequency = 130.0 Hz (vibrations = 0.0%, smoothing ~= 0.014)
+// To avoid too much smoothing with 'mzv', suggested max_accel <= 49800 mm/sec
+// Fitted shaper 'ei' frequency = 149.8 Hz (vibrations = 0.0%, smoothing ~= 0.016)
+// To avoid too much smoothing with 'ei', suggested max_accel <= 40900 mm/sec
+// Fitted shaper '2hump_ei' frequency = 145.6 Hz (vibrations = 0.0%, smoothing ~= 0.028)
+// To avoid too much smoothing with '2hump_ei', suggested max_accel <= 22500 mm/sec
+// Fitted shaper '3hump_ei' frequency = 149.8 Hz (vibrations = 0.0%, smoothing ~= 0.040)
+// To avoid too much smoothing with '3hump_ei', suggested max_accel <= 15200 mm/sec
+
+// Recommended shaper_type_x = mzv, shaper_freq_x = 130.0 Hz
+// shaper_type_x:mzv shaper_freq_x:130.000 damping_ratio_x:0.100000
+// shaper_type_y:2hump_ei shaper_freq_y:138.200 damping_ratio_y:0.100000
+// Shaper calibration data written to /tmp/calibration_data_x_20260129_121223.csv file
+```
+
+Y:
+```
+// Fitted shaper 'zv' frequency = 129.2 Hz (vibrations = 24.8%, smoothing ~= 0.013
+// To avoid too much smoothing with 'zv', suggested max_accel <= 65100 mm/sec
+// Fitted shaper 'mzv' frequency = 115.6 Hz (vibrations = 7.0%, smoothing ~= 0.017)
+// To avoid too much smoothing with 'mzv', suggested max_accel <= 39400 mm/sec
+// Fitted shaper 'ei' frequency = 149.8 Hz (vibrations = 7.9%, smoothing ~= 0.016)
+// To avoid too much smoothing with 'ei', suggested max_accel <= 40900 mm/sec
+// Fitted shaper '2hump_ei' frequency = 138.2 Hz (vibrations = 1.0%, smoothing ~= 0.031)
+// To avoid too much smoothing with '2hump_ei', suggested max_accel <= 20200 mm/sec
+// Fitted shaper '3hump_ei' frequency = 125.0 Hz (vibrations = 0.0%, smoothing ~= 0.057)
+// To avoid too much smoothing with '3hump_ei', suggested max_accel <= 10600 mm/sec
+
+// Recommended shaper_type_y = 2hump_ei, shaper_freq_y = 138.2 Hz
+// shaper_type_x:mzv shaper_freq_x:123.600 damping_ratio_x:0.100000
+// shaper_type_y:2hump_ei shaper_freq_y:138.200 damping_ratio_y:0.100000
+// Shaper calibration data written to /tmp/calibration_data_y_20260129_115147.csv file
+```
+
+As paradoxical as it may sound, testing shows that after a year of active use, the printer has become even more rigid and can now handle even higher accelerations than before. But there's nothing unusual about it; I simply performed this second calibration after a complete teardown, high-quality lubrication, and the installation of new black POM nuts, along with my own modification—installing thrust bearings on the stepper motors (which only works effectively on the Z-axes).
+
+```toml
+[input_shaper]
+shaper_type_x: mzv
+shaper_freq_x: 130.0
+shaper_type_y: 2hump_ei
+shaper_freq_y: 138.2
+```
+
+</details>
+
 
 ## How to calibrate?
 There are no special recommendations here, I recommend using the official documentation, I will simply tell you how I calibrated this printer. For starters, you can use any high-speed microcontroller, for example, rp2040/rp2350 with an adxl345 accelerometer, I simply used stm32f103 with an adxl345 accelerometer soldered in by myself and flashed it with the latest klipper firmware, one microcontroller with adxl is enough for separate calibration of one axis, and then another, just calibrate one axis and move the calibrator to the other, and then calibrate it too.
