@@ -28,3 +28,6 @@ Any firmware change resets the default settings, constantly having to adjust the
 - Then the LED turns off for about 2 seconds.
 - The LED starts blinking quickly.
 4. The flashing process is complete.
+
+## Machine resonances?
+<a href="./../resonances/Readme.md">See</a>
