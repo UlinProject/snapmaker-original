@@ -62,11 +62,11 @@ restart_method: command
 
 [printer]
 kinematics: cartesian
-max_velocity: 300 # test 140
-max_accel: 1000 # test 3000
+max_velocity: 140 # test 140
+max_accel: 3000 # default 1000
 max_z_velocity: 5 # test 20
 max_z_accel: 100 #  test 500
-square_corner_velocity: 4.0 # test 7-12
+square_corner_velocity: 7.0 # or 4.0
 
 [stepper_x]
 # brain_channel num: 1
@@ -119,8 +119,7 @@ enable_pin: !PA0
 microsteps: 16
 rotation_distance: 34.5572354212 # 200 * 16 / 92.60 for default e-steps 92.60
 heater_pin: !PB10
-sensor_type: ATC Semitec 104GT-2 # default
-# sensor_type: ATC Semitec 104NT-4-R025H42G # trianglelab
+sensor_type: ATC Semitec 104GT-2
 sensor_pin: PC5
 min_temp: 0
 max_temp: 280
@@ -257,4 +256,5 @@ Don't forget to check the sensors on your device before printing, PID calibratio
 
 ## Can Luban be used?
 Most likely not, Luban does rollbacks strangely and I don't even know why, no oddities with rollbacks to gcode from Cura or similar slicers were noticed. But for starters, you can try to print test prints on Luban (on large models such oddities are less noticeable).
+
 
