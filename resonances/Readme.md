@@ -4,9 +4,9 @@
 It seems that this is exactly what this printer lacked from the factory. The printer itself has very good indicators on the X axis from the factory, but with the Y axis, not everything is so good even according to accuracy tests, after this calibration, the printer accuracy has increased significantly and it became possible to increase the acceleration, as well as print at higher speeds. I do not recommend making such accelerations as recommended by autocalibration, start from the fact that the acceleration from the factory is 1500 (on printing) / 3000 (on the laser), you can use 3000/6000 on printing, and maybe more, but I do not recommend you to set 76800/61500 right away, this is too much, remember that due to the features of the printer (trapezoidal shafts) the printer is subject to strong friction, you can thus wear out this printer very quickly, and I also recommend that you lubricate it more often.
 
 ## My results (Demo01)
-<img src="./demo_01_volcano_shaper_calibrate_x.png" width="80%"></img>
+<img src="./v.0.12_demo_01_volcano_shaper_calibrate_x.png" width="80%"></img>
 
-<img src="./demo_01_def_shaper_calibrate_y.png" width="80%"></img>
+<img src="./v.0.12_demo_01_def_shaper_calibrate_y.png" width="80%"></img>
 
 X:
 ```
@@ -61,7 +61,7 @@ Note the order of the X, Y, Z axes and determine in which axis order you install
 serial: /dev/serial/by-id/usb-Klipper_stm32f103xe_25002700010000343333574E-if00
 restart_method: command
 
-[adxl345 AXES_Y]
+[adxl345 AXES_X_OR_Y]
 cs_pin: mcu2:PA4
 spi_speed: 5000000
 axes_map: y, x, z
@@ -69,13 +69,7 @@ spi_bus: spi1
 rate: 3200
 
 [resonance_tester]
-accel_chip_x: adxl345 AXES_Y # todofixme
-accel_chip_y: adxl345 AXES_Y
-move_speed: 50
+accel_chip: adxl345 AXES_X_OR_Y
+move_speed: 60
 probe_points:
-    100, 100, 20
-#min_freq: 5
-#   Minimum frequency to test for resonances. The default is 5 Hz.
-#max_freq: 133.33
-#   Maximum frequency to test for resonances. The default is 133.33 Hz.
-```
+    62.5, 62.5, 20
