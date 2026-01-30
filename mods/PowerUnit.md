@@ -1,9 +1,7 @@
 #### Power unit
 <img src="../img/power.JPG" width="11%"></img>
 
-A 24V 5A (120W) power supply is used, the reason is unknown, but from the factory this power supply showed 25.2V, in general, an excess of 0.2V is justified, since it allows you to compensate for losses on the wires, but here the excess is as much as 1.2V, which is very bad for the printer's electronics, since all its components (even just fans, heaters) are designed exclusively for 24V. My possible theory is that this excess is most likely done intentionally, since the printer experiences sagging when the heater and table are simultaneously heated by 1.2V.
-You can determine the voltage drop simply by the sound of the fans, which are connected directly to 24 V here.
+A 24V 5A (120W) power supply is used. The reason for this choice is unclear, but out of the box, it delivered 25.2V. While a 0.2V overhead can be justified to compensate for voltage drop across the wiring, a 1.2V excess is significant and potentially harmful to the electronics, as components like fans and heaters are rated strictly for 24V. My theory is that this was intentional to offset the 1.2V sag that occurs when the hotend and heatbed are heating simultaneously. You can even hear the voltage drop by the change in fan pitch, as they are wired directly to the 24V rail.
 
-Also, this power supply does not have any cooling capabilities and heats up with prolonged use, but overall it is bearable.
-
-I had an old Mean Well S-150-24 power supply (24V ~6.5A, ~150W) lying around in the bins, not the best choice, but reliable. I set it to 24.2 V and made a double wire to power the printer. As a result, the drop was 0.2 V at the moment of simultaneous heating of the extruder and the table, which suited me quite well.
+Furthermore, this stock PSU is passively cooled and gets quite hot during long prints, though it remains functional.
+I happened to have an old Mean Well S-150-24 (24V ~6.5A, 150W) in my spare parts bin. It’s not the most modern choice, but it's reliable. I adjusted it to 24.2V and used double wiring to power the printer. Now, the voltage drop is only 0.2V under full load, which is perfectly acceptable.
