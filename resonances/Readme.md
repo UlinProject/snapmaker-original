@@ -6,7 +6,7 @@ It seems that this is exactly what this printer lacked from the factory. The pri
 <b>Please note that polyoxymethylene (POM) nuts are officially considered lubrication-free; they operate on the dry lubrication principle, and lubrication will only increase dust adhesion. However, lubrication has been proven to reduce friction even on POM nuts, and I use specialized lubricants that reduce dust adhesion. Your choice should be based solely on your own needs.</b>
 
 <details>
-  <summary>## My results (Demo01, standard configuration)</summary>
+  <summary>## My results (2025, Demo01, standard configuration, X-(mzv, vibrations = 0.0%, smoothing ~= 0.017, max_accel <= 45000 mm/sec), Y-(3hump_ei, vibrations = 3.7%, smoothing ~= 0.050, max_accel <= 12600 mm/sec))</summary>
     
 <img src="./v.0.12_demo_01_volcano_shaper_calibrate_x.png" width="80%"></img>
 
@@ -23,7 +23,7 @@ To avoid too much smoothing with '2hump_ei', suggested max_accel <= 25000 mm/sec
 Fitted shaper '3hump_ei' frequency = 149.8 Hz (vibrations = 0.0%, smoothing ~= 0.040)
 To avoid too much smoothing with '3hump_ei', suggested max_accel <= 16400 mm/sec^2
 Fitted shaper 'mzv' frequency = 123.6 Hz (vibrations = 0.0%, smoothing ~= 0.017)
-To avoid too much smoothing with 'mzv', suggested max_accel <= 45000 mm/sec^2
+To avoid too much smoothing with 'mzv', suggested max_accel <= 45000 mm/sec
 ```
 
 Y:
@@ -37,7 +37,7 @@ To avoid too much smoothing with 'ei', suggested max_accel <= 2900 mm/sec^2
 Fitted shaper '2hump_ei' frequency = 39.4 Hz (vibrations = 3.8%, smoothing ~= 0.348)
 To avoid too much smoothing with '2hump_ei', suggested max_accel <= 1600 mm/sec^2
 Fitted shaper '3hump_ei' frequency = 131.2 Hz (vibrations = 3.7%, smoothing ~= 0.050)
-To avoid too much smoothing with '3hump_ei', suggested max_accel <= 12600 mm/sec^2
+To avoid too much smoothing with '3hump_ei', suggested max_accel <= 12600 mm/sec
 ```
 
 The results are more like the truth, but I'm not entirely sure about them, since these are the very first resonance measurements I made on this printer. The measurement was made directly on the nozzle itself, and on the heated platform at its very edge. What I can say is that the autocalibrator's choice of 1.1% vibrations is very strange, when you can choose 0%, but not at such high accelerations, and I also can't say with certainty that the chosen shaper will help 100%, since there are spikes at different frequencies.
@@ -58,8 +58,8 @@ Yes, the Y axis is limited to a max of 12600 acceleration, but that seems to be 
 </details>
 
 
-<details>
-  <summary>## My results (2026, design changes)</summary>
+<details open>
+  <summary>## My results (2026, design changes, X-(mzv, vibrations = 0.0%, smoothing ~= 0.014, max_accel <= 49800 mm/sec), Y-(2hump_ei, vibrations = 1.0%, smoothing ~= 0.031, max_accel <= 20200 mm/sec))</summary>
     
 <img src="./v0.13_shaper_calibrate_x2_20260129_115147.png" width="80%"></img>
 
