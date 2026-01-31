@@ -9,3 +9,6 @@ This procedure is necessary if you want to replace the original stepper motors w
 <i>I've used this circuit to connect other, more interesting stepper motors (such as one with a 0.9-degree rotation angle) to the extruder. Currently, I have a simple 17HS4401S stepper motor with a 0.9-degree rotation angle, and I replaced the 4.7kΩ resistor with a 13kΩ resistor, increasing the current from ~0.5A to ~1.3A.</i>
 
 <img src="../img/a4988_voltage_mod.jpg" width="70%"></img>
+
+#### Warning!
+Stepper motors are connected using a standard twisted cable. This cable may not be suitable for connecting stepper motors with a current greater than 1.1 A! (Even at 1.1 A, you will likely experience significant voltage drop.)
