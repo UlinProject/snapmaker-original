@@ -10,5 +10,5 @@ This procedure is necessary if you want to replace the original stepper motors w
 
 <img src="../img/a4988_voltage_mod.jpg" width="70%"></img>
 
-#### Warning!
-Stepper motors are connected using a standard twisted cable. This cable may not be suitable for connecting stepper motors with a current greater than 1.1 A! (Even at 1.1 A, you will likely experience significant voltage drop.)
+#### Caution!
+Stepper motors are connected using a standard twisted cable. This cable may not be suitable for connecting stepper motors with a current greater than 1.1 A! (Even at 1.1 A, you will likely experience a significant voltage drop.)
