@@ -138,13 +138,13 @@ I have hardly used it and have not tested it. There is a dc/dc converter board i
 ### Mods
 
 #### Cooling of the thread (3D)
-Cooling of the filament during printing is arranged in the strangest way, in general it is enough for someone, but for beginners I recommend printing and using https://www.thingiverse.com/thing:3403426 (I am not the author of this model, it is simply in the public domain)
+Cooling of the filament during printing is arranged in the strangest way, in general it is enough for someone, but for beginners I recommend printing and using https://www.thingiverse.com/thing:3403426 (I am not the author of this model, it is simply in the public domain, <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons - Attribution license</a>.)
 
 #### Spool holder (3D)
 <a href="./mods/SpoolHolder.md">See</a>
 
 #### Thread Spool Holder (3D)
-The thread holder allows you to correctly position the thread flow at a certain height, together with the modification of the holder, this is a comprehensive solution. Also, one of the advantages of this holder is that it allows you to easily move the engine control screen to the very top. https://www.thingiverse.com/thing:2757715 (I am not the author of this model, it is simply in the public domain)
+The thread holder allows you to correctly position the thread flow at a certain height, together with the modification of the holder, this is a comprehensive solution. Also, one of the advantages of this holder is that it allows you to easily move the engine control screen to the very top. https://www.thingiverse.com/thing:2757715 (I am not the author of this model, it is simply in the public domain, <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons - Attribution license</a>.)
 
 #### Power unit
 <a href="./mods/PowerUnit.md">See</a>
@@ -173,7 +173,7 @@ This g-code will determine the maximums for the axes and save the changes.
 #### Gaps in the guides
 The Y-guide design is not very good and involves large gaps through which debris can get in and affect the trapezoid screws; from time to time, various debris can get in there, including bolts or nuts (which, by the way, once happened to me), and especially considering that the manufacturer also assumes milling on this printer, the issue of debris is very acute.
 
-There was a solution on the Internet using a paper accordion filter, which in theory can be made by yourself and the necessary parts can be printed for it https://www.thingiverse.com/thing:2828419 (I am not the author of this model, it is simply in the public domain), at the moment I have not used this modification.
+There was a solution on the Internet using a paper accordion filter, which in theory can be made by yourself and the necessary parts can be printed for it https://www.thingiverse.com/thing:2828419 (I am not the author of this model, it is simply in the public domain, <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons - Attribution - Non-Commercial license</a>.), at the moment I have not used this modification.
 
 #### TMC2209? (stepper motor drivers)
 In general, it would be possible to simply desolder the a4988 with a hair dryer and replace them with tmc2209, since they have similar pinout, and also change the harness a little and maybe even run the setup via uart and sensorless pointing, but at the moment I decided not to do this. The reason for using tmc2209 is simple, it is the ability to greatly reduce the noise of the stepper motors, but the StealthChop algorithm can also cause problems with circular geometry, and because of the a4988, the stepper motors are very noisy even in standby mode.
