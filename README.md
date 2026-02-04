@@ -37,7 +37,7 @@ My specific printer was manufactured in 2020-2021, and the printer model itself 
 | cpu | gd32f105rc6 (ARM; Flash: 256kB; 72-108MHz; external 16Mhz clock; SRAM: 96kB) |
 | feedback | usb: ch340g (only 115200 baudrate, or 250000_baudrate/500000_baudrate in custom firmware, stable 921600 baudrate!) |
 | power unit | 24V 5A (120w) |
-| factory firmware | own firmware 2.11 based on marlin 1.1.0-RC6 (2016-04-24 12:00), gcode: marlin 1.1.0 + own set of instructions, licensed under GPLv3 |
+| factory firmware | own firmware 2.11 based on marlin 1.1.0-RC6 (2016-04-24 12:00), gcode: marlin 1.1.0 + own set of instructions, licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.ru.html">GPLv3</a> |
 | firmware | ... <a href="./firmware/README.md">See all</a> |
 | stepper motors | extruder Unknown 42HD4414-07 (1.8°(200), 2020/08/19) from mocotech, X Unknown 42HD4428-06 (1.8°(200), 2020/09/03) from mocotech, Y Unknown 42HD4428-06 (1.8°(200), 2020/09/03) from mocotech, Z Unknown 42HD4428-06 (1.8°(200), 2020/09/03) from mocotech ... <a href="./mods/BrainVoltageMod.md">See BrainVoltageMod</a> |
 | drivers | extruder-rj45 (a4988, 16 steps, ~0.44vref, ~0.56A), X (a4988, 16 steps, ~0.87vref, ~1A), Y (a4988, 16 steps, ~0.87vref, ~1A), Z1 (a4988, 16 steps, ~0.87vref, ~1A), Z2 (X (a4988, 16 steps, ~0.87vref, ~1A)|
