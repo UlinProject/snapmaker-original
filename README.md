@@ -39,7 +39,7 @@ My specific printer was manufactured in 2020-2021, and the printer model itself 
 | power unit | 24V 5A (120w) |
 | factory firmware | own firmware 2.11 based on marlin 1.1.0-RC6 (2016-04-24 12:00), gcode: marlin 1.1.0 + own set of instructions |
 | firmware | ... <a href="./firmware/README.md">See all</a> |
-| stepper motors | extruder Unknown 42HD4414-07 (1.8°(200), 2020/08/19) from mocotech, X Unknown 42HD4428-06 (1.8°(200), 2020/09/03) from mocotech, Y Unknown 42HD4428-06 (1.8°(200), 2020/09/03) from mocotech, Z Unknown 42HD4428-06 (1.8°(200), 2020/09/03) from mocotech|
+| stepper motors | extruder Unknown 42HD4414-07 (1.8°(200), 2020/08/19) from mocotech, X Unknown 42HD4428-06 (1.8°(200), 2020/09/03) from mocotech, Y Unknown 42HD4428-06 (1.8°(200), 2020/09/03) from mocotech, Z Unknown 42HD4428-06 (1.8°(200), 2020/09/03) from mocotech ... <a href="./mods/BrainVoltageMod.md">See BrainVoltageMod</a> |
 | drivers | extruder-rj45 (a4988, 16 steps, ~0.44vref, ~0.56A), X (a4988, 16 steps, ~0.87vref, ~1A), Y (a4988, 16 steps, ~0.87vref, ~1A), Z1 (a4988, 16 steps, ~0.87vref, ~1A), Z2 (X (a4988, 16 steps, ~0.87vref, ~1A)|
 
 About factory firmware: The processor's performance fully covers the printer's capabilities, but the feedback significantly limits it due to the standard data transfer rate of 115200 baud. This is the first printer I know that prints better from a USB flash drive.
