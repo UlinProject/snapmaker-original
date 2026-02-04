@@ -9,9 +9,9 @@ Snapmaker is a registered trademark, to which I have no relation, you can always
 ## Firmware
 | name | value | stable |
 | ---- | ----- | ----- |
-| Klipper_6_2025Demo460800.Bin | Experimental current (as of 2025) demo firmware klipper | +-(only tests) |
-| Klipper_10_v0.12.0_2025.zip | Relevant for start 2025, functionality is not cut. Firmware in the archive, you need to unpack and select the desired baudrate, if you do not know the baudrate take 250000, ONLY UART (UART via USB or directly). | +(only tests) |
-| Klipper_12_v0.13.0_2025.zip | Relevant for 2025-2026, functionality is not cut. Firmware in the archive, you need to unpack and select the desired baudrate, if you do not know the baudrate take 250000, ONLY UART (UART via USB or directly). | +(only tests) |
+| Klipper_6_2025Demo460800.Bin | Experimental current (as of 2025) demo firmware klipper. Licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a> | +-(only tests) |
+| Klipper_10_v0.12.0_2025.zip | Relevant for start 2025, functionality is not cut. Firmware in the archive, you need to unpack and select the desired baudrate, if you do not know the baudrate take 250000, ONLY UART (UART via USB or directly). Licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a> | +(only tests) |
+| Klipper_12_v0.13.0_2025.zip | Relevant for 2025-2026, functionality is not cut. Firmware in the archive, you need to unpack and select the desired baudrate, if you do not know the baudrate take 250000, ONLY UART (UART via USB or directly). Licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPLv3</a> | + |
 
 ## How to reflash?
 1. Copy any file and rename it to Update.Bin to a USB disk formatted in Fat32.
@@ -256,5 +256,6 @@ Don't forget to check the sensors on your device before printing, PID calibratio
 
 ## Can Luban be used?
 Most likely not, Luban does rollbacks strangely and I don't even know why, no oddities with rollbacks to gcode from Cura or similar slicers were noticed. But for starters, you can try to print test prints on Luban (on large models such oddities are less noticeable).
+
 
 
