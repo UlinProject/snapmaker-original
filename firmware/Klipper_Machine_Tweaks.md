@@ -32,7 +32,7 @@ KLIPPER_PID=$(pgrep -f "klippy.py")
 
 if [ -n "$KLIPPER_PID" ]; then
     chrt -f -p 40 $KLIPPER_PID       # Set Real-Time priority
-    taskset -cp 3 $KLIPPER_PID      # Bind to isolated core 3
+    taskset -cp 3 $KLIPPER_PID       # Bind to isolated core 3
     ionice -c 1 -n 0 -p $KLIPPER_PID # Maximize I/O priority
 fi
 ```
@@ -60,8 +60,8 @@ cpupower frequency-set -g performance
 ##### Logging & Network
 Script (add to the end): /etc/rc.local
 ```bash
-mount -t tmpfs tmpfs /home/alarm/printer_data/logs/ &> /dev/null
-iw dev wlan0 set power_save off &
+mount -t tmpfs tmpfs /home/alarm/printer_data/logs/
+iw dev wlan0 set power_save off
 ```
 
 ##### Extreme Real-Time Tuning
@@ -69,5 +69,5 @@ Note: Use with caution. Removes the 5% CPU safety margin for the OS.
 
 Script (add to the end): /etc/rc.local
 ```bash
-sysctl -w kernel.sched_rt_runtime_us=-1 &> /dev/null
+sysctl -w kernel.sched_rt_runtime_us=-1
 ```
