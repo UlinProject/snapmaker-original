@@ -3,7 +3,7 @@
 #### # UART Interface
 Use the built-in UART interface for direct MCU communication.
 
-Documentation: <a href="../mods/Uart.md">See Uart.md</a>.
+Documentation: <a href="../mods/Uart.md#direct-uart-connection-to-sbc-single-board-computer">See Uart.md</a>.
 
 #### # USB (cmdline.txt)
 Optimizations for the USB stack and CPU scheduling.
