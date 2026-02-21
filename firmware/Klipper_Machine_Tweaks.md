@@ -66,8 +66,8 @@ iw dev wlan0 set power_save off &
 
 ##### Extreme Real-Time Tuning
 Note: Use with caution. Removes the 5% CPU safety margin for the OS.
+
 Script (add to the end): /etc/rc.local
 ```bash
 sysctl -w kernel.sched_rt_runtime_us=-1 &> /dev/null
-iw dev wlan0 set power_save off &
 ```
