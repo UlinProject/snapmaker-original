@@ -263,5 +263,6 @@ Most likely not, Luban does rollbacks strangely and I don't even know why, no od
 ## Cura (slicer)
 <a href="../cura/Readme.md">See</a>
 
-
+## Klipper machine tweaks
+<a href="./Klipper_Machine_Tweaks.md">See</a>
 
