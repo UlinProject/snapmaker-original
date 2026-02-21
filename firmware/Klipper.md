@@ -62,11 +62,11 @@ restart_method: command
 
 [printer]
 kinematics: cartesian
-max_velocity: 140 # test 140
-max_accel: 3000 # default 1000
-max_z_velocity: 5 # test 20
-max_z_accel: 100 #  test 500
-square_corner_velocity: 7.0 # or 4.0
+max_velocity: 300 # test 140
+max_accel: 3600 # default 1000
+max_z_velocity: 20 # default 5, The default value is 5. Note that the printer's Z-axis rotation speed is heavily limited from the factory. This is normal, but the problem is that even in the slicer, this value is usually set to 15 (while in the configuration, it's 5), and even the Marlin firmware itself always limits the speed during movement, which raises questions (after all, the slicer configuration was designed for this printer, but even its factory settings are ignored by the firmware itself).
+max_z_accel: 450 #  default 100
+square_corner_velocity: 8.0 # or 4.0/7.0
 
 [stepper_x]
 # brain_channel num: 1
@@ -256,6 +256,7 @@ Don't forget to check the sensors on your device before printing, PID calibratio
 
 ## Can Luban be used?
 Most likely not, Luban does rollbacks strangely and I don't even know why, no oddities with rollbacks to gcode from Cura or similar slicers were noticed. But for starters, you can try to print test prints on Luban (on large models such oddities are less noticeable).
+
 
 
 
