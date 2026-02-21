@@ -10,7 +10,7 @@ Optimizations for the USB stack and CPU scheduling.
 
 Path (add to the end): /boot/firmware/cmdline.txt
 ```
-dwc_otg.lpm_enable=0 dwc_otg.fiq_fsm_enable=1 dwc_otg.nak_holdoff=1
+ dwc_otg.lpm_enable=0 dwc_otg.fiq_fsm_enable=1 dwc_otg.nak_holdoff=1
 ```
 <b>dwc_otg:</b> Disables USB power management and optimizes interrupt handling to ensure stable MCU connection.
 
@@ -20,7 +20,7 @@ Dedicate one CPU core exclusively to running Klipper.
 
 Path (add to the end): /boot/firmware/cmdline.txt
 ```
-isolcpus=3
+ isolcpus=3
 ```
 <b>isolcpus=3:</b> Isolates the 4th CPU core from the Linux general scheduler for exclusive Klipper use.
 
@@ -70,4 +70,18 @@ Note: Use with caution. Removes the 5% CPU safety margin for the OS.
 Script (add to the end): /etc/rc.local
 ```bash
 sysctl -w kernel.sched_rt_runtime_us=-1
+```
+
+##### CMA (if you don't use the display, rpi3 machine)
+Note: Just free up some RAM by cutting cma. How much free space is in the CMA? Check with cat /proc/meminfo (usually free 28m).
+
+Path (add to the end): /boot/firmware/cmdline.txt
+```
+ cma=32M
+```
+
+##### Mitigations + off_audit (be aware of the risks)
+Path (add to the end): /boot/firmware/cmdline.txt
+```
+ mitigations=off audit=0
 ```
