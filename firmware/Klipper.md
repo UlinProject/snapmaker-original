@@ -254,9 +254,14 @@ gcode:
 ```
 Don't forget to check the sensors on your device before printing, PID calibration (extruder and bed), manual bed height calibration, ... and only then the print itself.
 
-## Can Luban be used?
+## Resonance compensation
+<a href="../resonances/Readme.md">See</a>
+
+## Can Luban be used? (slicer)
 Most likely not, Luban does rollbacks strangely and I don't even know why, no oddities with rollbacks to gcode from Cura or similar slicers were noticed. But for starters, you can try to print test prints on Luban (on large models such oddities are less noticeable).
 
+## Cura (slicer)
+<a href="../cura/Readme.md">See</a>
 
 
 
